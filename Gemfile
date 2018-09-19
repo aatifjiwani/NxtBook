@@ -36,6 +36,9 @@ group :development, :test do
   gem 'selenium-webdriver', '~> 3.12.0'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper', '~> 1.2.0'
+  
+  gem 'pry-rails' 
+  gem 'factory_bot_rails'
 end
 
 group :development do
