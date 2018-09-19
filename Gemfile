@@ -33,6 +33,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8'
   gem 'capybara', '~> 3.7', '>= 3.7.2'
+  gem 'selenium-webdriver', '~> 3.12.0'
+  # Easy installation and use of chromedriver to run system tests with Chrome
+  gem 'chromedriver-helper', '~> 1.2.0'
 end
 
 group :development do
