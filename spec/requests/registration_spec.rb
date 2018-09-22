@@ -5,6 +5,9 @@ RSpec.describe 'POST /signup', type: :request do
   let(:params) do
     {
       user: {
+        username: 'demouser',
+        firstname: 'demo',
+        lastname: 'user',
         email: 'user@example.com',
         password: 'password'
       }
@@ -34,7 +37,7 @@ RSpec.describe 'POST /signup', type: :request do
       expect(response.status).to eq 400
     end
 
-    it 'returns validation errors' do
+    it 'returns validation errors for email' do
       error = JSON.parse(response.body)["errors"][0]["detail"]
       expect(error["email"][0]).to eq("has already been taken")
     end
