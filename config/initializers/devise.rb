@@ -8,7 +8,9 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '342b90017e70b02ee5a22ccbc3683fd3e98af3986766fd278aa7bb617ae453e2c19787a5f13d79597d3221a27dbd0caa6c992ca986ea1cffedd1b6720c02bc0e'
+  # 
+  
+  config.secret_key = Rails.application.credentials.dig(:devise_key)
   
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -18,7 +20,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'support@nxtbook.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -250,6 +252,8 @@ Devise.setup do |config|
   # The "*/*" below is required to match Internet Explorer requests.
   # config.navigational_formats = ['*/*', :html]
 
+  # prevents devise from using flash messages which are not present in Rails api mode.
+  config.navigational_formats = []
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
