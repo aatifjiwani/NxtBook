@@ -1,10 +1,38 @@
 require 'rails_helper'
 
-RSpec.describe 'POST /login', type: :request do
+RSpec.describe 'With invalid API Token', type: :request do
   let(:user) { create(:user) }
   let(:url) { '/login' }
   let(:params) do
     {
+      token: 'invalidtoken',
+      user: {
+        email: user.email,
+        password: user.password
+      }
+    }
+  end
+  
+  context 'when api token is invalid' do
+    it 'returns unauthorized response' do
+      post url, params: params
+      
+      expect(response).to have_http_status(401)
+      expect(response.body).to eq({
+        status: "error",
+        message: "API Token is Invalid"
+        }.to_json)
+    end
+  end
+end
+
+RSpec.describe 'POST /login', type: :request do
+  let(:user) { create(:user) }
+  let(:token) { Rails.application.credentials.dig(:api_token) }
+  let(:url) { '/login' }
+  let(:params) do
+    {
+      token: token,
       user: {
         email: user.email,
         password: user.password

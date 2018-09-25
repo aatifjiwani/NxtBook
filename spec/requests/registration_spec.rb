@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'POST /signup', type: :request do
   let(:url) { '/signup' }
+  let(:token) { Rails.application.credentials.dig(:api_token) }
   let(:params) do
     {
+      token: token,
       user: {
         username: 'demouser',
         firstname: 'demo',

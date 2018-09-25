@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+  before_action :verify_api_token
+  
   def render_resource(resource)
     if resource.errors.empty?
       render json: resource
@@ -18,5 +20,14 @@ class ApplicationController < ActionController::API
         }
       ]
     }, status: :bad_request
+  end
+  
+  def verify_api_token
+    if params[:token] != Rails.application.credentials.dig(:api_token) 
+      render json: {
+        "status": "error",
+        "message": "API Token is Invalid"
+        }, status: :unauthorized
+    end
   end
 end
