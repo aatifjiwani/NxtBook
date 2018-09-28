@@ -30,4 +30,15 @@ class ApplicationController < ActionController::API
         }, status: :unauthorized
     end
   end
+  
+  def verify_user_id
+    @user = User.find_by(id: params[:user_id]) if params[:user_id].present?
+    if @user.nil?
+      respond_with_error("Invalid User")
+    end
+  end
+  
+  def respond_with_error(message, status: :unprocessable_entity)
+    render(json: {status: "error", message: message}, status: status)
+  end
 end

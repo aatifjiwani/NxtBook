@@ -6,4 +6,6 @@ class User < ApplicationRecord
          jwt_revocation_strategy: JWTBlacklist
   
   validates :username, uniqueness: true
+  
+  has_many :sold_books
 end
