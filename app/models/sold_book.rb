@@ -8,4 +8,6 @@ class SoldBook < ApplicationRecord
   validates :price, presence: true
   
   validates :user, presence: true
+  
+  scope :recent, -> { all.order(created_at: :desc) }
 end

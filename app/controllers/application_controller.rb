@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
   
   def render_resource(resource)
     if resource.errors.empty?
-      render json: resource
+      render json: resource, status: :ok
     else
       validation_error(resource)
     end
@@ -34,11 +34,17 @@ class ApplicationController < ActionController::API
   def verify_user_id
     @user = User.find_by(id: params[:user_id]) if params[:user_id].present?
     if @user.nil?
-      respond_with_error("Invalid User")
+      respond_with_error("Invalid User ID")
     end
   end
   
-  def respond_with_error(message, status: :unprocessable_entity)
-    render(json: {status: "error", message: message}, status: status)
+  def respond_with_error(message, status: :bad_request)
+    render(json: {error: message}, status: status)
+  end
+  
+  def respond_destroy_success
+    render json: {
+        destroy: true
+      }, status: :ok
   end
 end
