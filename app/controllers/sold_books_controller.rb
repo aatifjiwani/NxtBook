@@ -19,7 +19,14 @@ class SoldBooksController < ApplicationController
   end
   
   def create
-    book = @user.sold_books.new(book_params)
+    type = params[:type]
+    if type == "resell"
+      book = @user.sold_books.new(sold_book_params(@bought_book.as_json))
+      @bought_book.destroy
+    else
+      book = @user.sold_books.new(book_params)
+    end
+    
     book.save
     render_resource(book)
   end
@@ -41,6 +48,18 @@ class SoldBooksController < ApplicationController
       respond_destroy_success
     else
       respond_with_error("Unable to delete book")
+    end
+  end
+  
+  def sold_book_params(bought_book)
+    ["id", "updated_at", "created_at", "user_id"].each { |k| bought_book.delete(k) }
+    bought_book
+  end
+  
+  def verify_bought_book_id
+    @bought_book = BoughtBook.find_by(id: params[:bought_book])
+    if @bought_book.nil?
+      respond_with_error("Invalid Book ID")
     end
   end
   

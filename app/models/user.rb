@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   
   has_many :sold_books
+  has_many :bought_books
 end
