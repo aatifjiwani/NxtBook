@@ -14,6 +14,7 @@
 		39A191C321600E2600D6786C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A191C121600E2600D6786C /* LaunchScreen.storyboard */; };
 		39A191CE21600E2600D6786C /* nxtBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191CD21600E2600D6786C /* nxtBookTests.swift */; };
 		39A191D921600E2600D6786C /* nxtBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191D821600E2600D6786C /* nxtBookUITests.swift */; };
+		39A191EB21600EFF00D6786C /* IndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191EA21600EFF00D6786C /* IndexController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		39A191D421600E2600D6786C /* nxtBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nxtBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A191D821600E2600D6786C /* nxtBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nxtBookUITests.swift; sourceTree = "<group>"; };
 		39A191DA21600E2600D6786C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39A191EA21600EFF00D6786C /* IndexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,10 @@
 		39A191B721600E2600D6786C /* nxtBook */ = {
 			isa = PBXGroup;
 			children = (
+				39A191E921600EF200D6786C /* Views */,
+				39A191E821600EEB00D6786C /* Helpers */,
+				39A191E721600EE600D6786C /* Models */,
+				39A191E621600EDA00D6786C /* Controllers */,
 				39A191B821600E2600D6786C /* AppDelegate.swift */,
 				39A191BA21600E2600D6786C /* ViewController.swift */,
 				39A191BC21600E2600D6786C /* Main.storyboard */,
@@ -123,6 +129,35 @@
 				39A191DA21600E2600D6786C /* Info.plist */,
 			);
 			path = nxtBookUITests;
+			sourceTree = "<group>";
+		};
+		39A191E621600EDA00D6786C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				39A191EA21600EFF00D6786C /* IndexController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		39A191E721600EE600D6786C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		39A191E821600EEB00D6786C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		39A191E921600EF200D6786C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A191BB21600E2600D6786C /* ViewController.swift in Sources */,
+				39A191EB21600EFF00D6786C /* IndexController.swift in Sources */,
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
