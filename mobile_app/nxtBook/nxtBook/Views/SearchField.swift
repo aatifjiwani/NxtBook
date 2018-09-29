@@ -18,14 +18,14 @@ class SearchField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let padding = UIEdgeInsets(top: 0, left: 70, bottom: 0, right: 5);
+    let padding = UIEdgeInsets(top: 0, left: 60, bottom: 0, right: 5);
     
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return UIEdgeInsetsInsetRect(bounds, padding)
     }
     
     override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return UIEdgeInsetsInsetRect(bounds, padding)
+        return UIEdgeInsetsInsetRect(bounds, UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5))
     }
     
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
@@ -49,8 +49,11 @@ class SearchField: UITextField {
         
         textAlignment = .left
         
+        let centeredParagraphStyle = NSMutableParagraphStyle()
+        centeredParagraphStyle.alignment = .center
+        
         attributedPlaceholder = NSAttributedString(string: "title, author, isbn",
-                                                   attributes: [NSAttributedStringKey.foregroundColor: Colors.nxtBlue, NSAttributedStringKey.font: UIFont(name: "Futura-Medium", size: 20)!])
+                                                   attributes: [NSAttributedStringKey.foregroundColor: Colors.nxtBlue, NSAttributedStringKey.font: UIFont(name: "Futura-Medium", size: 20)!, NSAttributedStringKey.paragraphStyle: centeredParagraphStyle])
         
         let iconView = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
         iconView.addSubview(searchIcon)
