@@ -15,6 +15,11 @@
 		39A191CE21600E2600D6786C /* nxtBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191CD21600E2600D6786C /* nxtBookTests.swift */; };
 		39A191D921600E2600D6786C /* nxtBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191D821600E2600D6786C /* nxtBookUITests.swift */; };
 		39A191EB21600EFF00D6786C /* IndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191EA21600EFF00D6786C /* IndexController.swift */; };
+		39A191EE216011EF00D6786C /* Mont-HeavyDEMO.otf in Resources */ = {isa = PBXBuildFile; fileRef = 39A191ED216011EF00D6786C /* Mont-HeavyDEMO.otf */; };
+		39A191F02160140300D6786C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191EF2160140300D6786C /* Colors.swift */; };
+		39A191F2216015B600D6786C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F1216015B600D6786C /* UIViewExtension.swift */; };
+		39A191F42160178700D6786C /* IndexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F32160178700D6786C /* IndexButton.swift */; };
+		39A191F621601BE500D6786C /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F521601BE500D6786C /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		39A191D821600E2600D6786C /* nxtBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nxtBookUITests.swift; sourceTree = "<group>"; };
 		39A191DA21600E2600D6786C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39A191EA21600EFF00D6786C /* IndexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexController.swift; sourceTree = "<group>"; };
+		39A191ED216011EF00D6786C /* Mont-HeavyDEMO.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mont-HeavyDEMO.otf"; sourceTree = "<group>"; };
+		39A191EF2160140300D6786C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		39A191F1216015B600D6786C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		39A191F32160178700D6786C /* IndexButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexButton.swift; sourceTree = "<group>"; };
+		39A191F521601BE500D6786C /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		39A191B721600E2600D6786C /* nxtBook */ = {
 			isa = PBXGroup;
 			children = (
+				39A191EC216011D500D6786C /* Resources */,
 				39A191E921600EF200D6786C /* Views */,
 				39A191E821600EEB00D6786C /* Helpers */,
 				39A191E721600EE600D6786C /* Models */,
@@ -149,6 +160,9 @@
 		39A191E821600EEB00D6786C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				39A191EF2160140300D6786C /* Colors.swift */,
+				39A191F1216015B600D6786C /* UIViewExtension.swift */,
+				39A191F521601BE500D6786C /* UIButtonExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -156,8 +170,17 @@
 		39A191E921600EF200D6786C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				39A191F32160178700D6786C /* IndexButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		39A191EC216011D500D6786C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				39A191ED216011EF00D6786C /* Mont-HeavyDEMO.otf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +289,7 @@
 			files = (
 				39A191C321600E2600D6786C /* LaunchScreen.storyboard in Resources */,
 				39A191C021600E2600D6786C /* Assets.xcassets in Resources */,
+				39A191EE216011EF00D6786C /* Mont-HeavyDEMO.otf in Resources */,
 				39A191BE21600E2600D6786C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +315,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A191F2216015B600D6786C /* UIViewExtension.swift in Sources */,
 				39A191BB21600E2600D6786C /* ViewController.swift in Sources */,
+				39A191F42160178700D6786C /* IndexButton.swift in Sources */,
+				39A191F02160140300D6786C /* Colors.swift in Sources */,
+				39A191F621601BE500D6786C /* UIButtonExtension.swift in Sources */,
 				39A191EB21600EFF00D6786C /* IndexController.swift in Sources */,
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
 			);
