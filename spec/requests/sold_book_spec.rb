@@ -121,7 +121,6 @@ RSpec.describe 'Sold Books', type: :request do
       
       describe "user reselling a book" do
         it 'creates a new book for sale' do
-          #binding.pry
           url = "/sold_books"
           params = {
             token: token,
@@ -131,9 +130,9 @@ RSpec.describe 'Sold Books', type: :request do
           }
           
           post url, params: params
-          #binding.pry
           expect(response.status).to eq(200)
           expect(response.body).to eq(SoldBook.first.to_json)
+          expect(BoughtBook.count).to eq(0)
         end
       end
     end
