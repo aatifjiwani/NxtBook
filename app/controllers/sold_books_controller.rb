@@ -1,6 +1,5 @@
 class SoldBooksController < ApplicationController
   before_action :verify_user_id, only: [:create, :update, :destroy]
-  
   before_action :verify_book_id, only: [:show, :update, :destroy]
   
   def index
@@ -21,6 +20,7 @@ class SoldBooksController < ApplicationController
   def create
     type = params[:type]
     if type == "resell"
+      verify_bought_book_id
       book = @user.sold_books.new(sold_book_params(@bought_book.as_json))
       @bought_book.destroy
     else

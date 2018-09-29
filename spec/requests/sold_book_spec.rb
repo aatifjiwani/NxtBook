@@ -115,5 +115,27 @@ RSpec.describe 'Sold Books', type: :request do
         
       end
     end
+    
+    context "with existing bought books" do
+      let!(:book) { create(:bought_book, user: user) }
+      
+      describe "user reselling a book" do
+        it 'creates a new book for sale' do
+          #binding.pry
+          url = "/sold_books"
+          params = {
+            token: token,
+            user_id: user.id,
+            type: "resell",
+            bought_book: book.id
+          }
+          
+          post url, params: params
+          #binding.pry
+          expect(response.status).to eq(200)
+          expect(response.body).to eq(SoldBook.first.to_json)
+        end
+      end
+    end
   end
 end
