@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_28_224920) do
+ActiveRecord::Schema.define(version: 2018_09_29_000240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bought_books", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "author", null: false
+    t.string "isbn", null: false
+    t.decimal "price", null: false
+    t.integer "condition", null: false
+    t.bigint "user_id"
+    t.string "coverphoto"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author"], name: "index_bought_books_on_author"
+    t.index ["isbn"], name: "index_bought_books_on_isbn"
+    t.index ["title"], name: "index_bought_books_on_title"
+    t.index ["user_id"], name: "index_bought_books_on_user_id"
+  end
 
   create_table "jwt_blacklist", id: :serial, force: :cascade do |t|
     t.string "jti", null: false
