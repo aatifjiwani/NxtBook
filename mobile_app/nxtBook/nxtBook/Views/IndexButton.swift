@@ -28,9 +28,15 @@ class IndexButton: UIButton {
     
     func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
+        
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        layer.shadowOpacity = 0.2
+        layer.shadowRadius = 4.0
+        
         layer.cornerRadius = 8
         layer.masksToBounds = true
-        
+
         contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
         contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
         

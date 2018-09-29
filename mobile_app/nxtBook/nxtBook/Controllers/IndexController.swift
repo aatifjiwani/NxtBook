@@ -29,7 +29,7 @@ class IndexController: UIViewController {
     let titleBar: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.nxtOrange
-        view.layer.cornerRadius = 4
+        view.layer.cornerRadius = 8
         view.layer.masksToBounds = true
         return view
     }()
@@ -78,6 +78,17 @@ class IndexController: UIViewController {
         return button
     }()
     
+    let search = SearchField()
+    
+    let searchLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.white
+        label.text = "find a book"
+        label.font = UIFont(name: "Futura-Medium", size: 18)
+        return label
+    }()
+    
+    
     func setupViews() {
         setupBackground()
         
@@ -102,19 +113,28 @@ class IndexController: UIViewController {
         
         view.addSubview(sellButton)
         sellButton.anchorCenterXToSuperview()
-        sellButton.anchor(buyButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 325, heightConstant: 70)
+        sellButton.anchor(buyButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 30, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 325, heightConstant: 70)
         sellButton.setGradientBackground(startColor: Colors.nxtLightOrange, endColor: Colors.nxtOrange, startX: 0.0, startY: 0.5, endX: 1.0, endY: 0.5)
         
         view.addSubview(profileButton)
         profileButton.anchorCenterXToSuperview()
-        profileButton.anchor(sellButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 325, heightConstant: 70)
+        profileButton.anchor(sellButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 30, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 325, heightConstant: 70)
         profileButton.setGradientBackground(startColor: Colors.nxtLightOrange, endColor: Colors.nxtOrange, startX: 0.0, startY: 0.5, endX: 1.0, endY: 0.5)
         
         view.addSubview(aboutButton)
         aboutButton.anchorCenterXToSuperview()
-        aboutButton.anchor(profileButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 325, heightConstant: 70)
+        aboutButton.anchor(profileButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 30, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 325, heightConstant: 70)
         aboutButton.setGradientBackground(startColor: Colors.nxtLightOrange, endColor: Colors.nxtOrange, startX: 0.0, startY: 0.5, endX: 1.0, endY: 0.5)
         
+        
+        view.addSubview(search)
+        search.anchorCenterXToSuperview()
+        search.anchor(nil, left: nil, bottom: view.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 30, rightConstant: 0, widthConstant: 320, heightConstant: 50)
+        
+        view.addSubview(searchLabel)
+        searchLabel.anchorCenterXToSuperview()
+        searchLabel.anchor(nil, left: nil, bottom: search.topAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 20, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        searchLabel.sizeToFit()
         
     }
     

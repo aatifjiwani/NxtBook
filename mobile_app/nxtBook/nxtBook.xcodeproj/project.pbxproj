@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		39A191B921600E2600D6786C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191B821600E2600D6786C /* AppDelegate.swift */; };
-		39A191BB21600E2600D6786C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191BA21600E2600D6786C /* ViewController.swift */; };
 		39A191BE21600E2600D6786C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BC21600E2600D6786C /* Main.storyboard */; };
 		39A191C021600E2600D6786C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BF21600E2600D6786C /* Assets.xcassets */; };
 		39A191C321600E2600D6786C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A191C121600E2600D6786C /* LaunchScreen.storyboard */; };
@@ -20,6 +19,7 @@
 		39A191F2216015B600D6786C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F1216015B600D6786C /* UIViewExtension.swift */; };
 		39A191F42160178700D6786C /* IndexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F32160178700D6786C /* IndexButton.swift */; };
 		39A191F621601BE500D6786C /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F521601BE500D6786C /* UIButtonExtension.swift */; };
+		39A191F82160273100D6786C /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F72160273100D6786C /* SearchField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,6 @@
 /* Begin PBXFileReference section */
 		39A191B521600E2600D6786C /* nxtBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nxtBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A191B821600E2600D6786C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39A191BA21600E2600D6786C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		39A191BD21600E2600D6786C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39A191BF21600E2600D6786C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39A191C221600E2600D6786C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		39A191F1216015B600D6786C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		39A191F32160178700D6786C /* IndexButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexButton.swift; sourceTree = "<group>"; };
 		39A191F521601BE500D6786C /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		39A191F72160273100D6786C /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,6 @@
 				39A191E721600EE600D6786C /* Models */,
 				39A191E621600EDA00D6786C /* Controllers */,
 				39A191B821600E2600D6786C /* AppDelegate.swift */,
-				39A191BA21600E2600D6786C /* ViewController.swift */,
 				39A191BC21600E2600D6786C /* Main.storyboard */,
 				39A191BF21600E2600D6786C /* Assets.xcassets */,
 				39A191C121600E2600D6786C /* LaunchScreen.storyboard */,
@@ -171,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				39A191F32160178700D6786C /* IndexButton.swift */,
+				39A191F72160273100D6786C /* SearchField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,10 +316,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A191F2216015B600D6786C /* UIViewExtension.swift in Sources */,
-				39A191BB21600E2600D6786C /* ViewController.swift in Sources */,
 				39A191F42160178700D6786C /* IndexButton.swift in Sources */,
 				39A191F02160140300D6786C /* Colors.swift in Sources */,
 				39A191F621601BE500D6786C /* UIButtonExtension.swift in Sources */,
+				39A191F82160273100D6786C /* SearchField.swift in Sources */,
 				39A191EB21600EFF00D6786C /* IndexController.swift in Sources */,
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
 			);
