@@ -109,7 +109,7 @@ class IndexController: UIViewController {
         buyButton.anchorCenterXToSuperview()
         buyButton.anchor(titleBar.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 40, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 325, heightConstant: 70)
         buyButton.setGradientBackground(startColor: Colors.nxtLightOrange, endColor: Colors.nxtOrange, startX: 0.0, startY: 0.5, endX: 1.0, endY: 0.5)
-        
+        buyButton.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
         
         view.addSubview(sellButton)
         sellButton.anchorCenterXToSuperview()
@@ -136,6 +136,12 @@ class IndexController: UIViewController {
         searchLabel.anchor(nil, left: nil, bottom: search.topAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 20, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         searchLabel.sizeToFit()
         
+    }
+    
+    @objc func handleButton() {
+        print("yo")
+        let control = C2()
+        present(control, animated: true, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39306E1D2160CB8C00AD3F26 /* C1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39306E1C2160CB8C00AD3F26 /* C1.swift */; };
+		39306E1F2160CBCD00AD3F26 /* C2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39306E1E2160CBCD00AD3F26 /* C2.swift */; };
 		39A191B921600E2600D6786C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191B821600E2600D6786C /* AppDelegate.swift */; };
 		39A191BE21600E2600D6786C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BC21600E2600D6786C /* Main.storyboard */; };
 		39A191C021600E2600D6786C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BF21600E2600D6786C /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39306E1C2160CB8C00AD3F26 /* C1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C1.swift; sourceTree = "<group>"; };
+		39306E1E2160CBCD00AD3F26 /* C2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2.swift; sourceTree = "<group>"; };
 		39A191B521600E2600D6786C /* nxtBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nxtBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A191B821600E2600D6786C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39A191BD21600E2600D6786C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				39A191EA21600EFF00D6786C /* IndexController.swift */,
+				39306E1C2160CB8C00AD3F26 /* C1.swift */,
+				39306E1E2160CBCD00AD3F26 /* C2.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -317,11 +323,13 @@
 			files = (
 				39A191F2216015B600D6786C /* UIViewExtension.swift in Sources */,
 				39A191F42160178700D6786C /* IndexButton.swift in Sources */,
+				39306E1F2160CBCD00AD3F26 /* C2.swift in Sources */,
 				39A191F02160140300D6786C /* Colors.swift in Sources */,
 				39A191F621601BE500D6786C /* UIButtonExtension.swift in Sources */,
 				39A191F82160273100D6786C /* SearchField.swift in Sources */,
 				39A191EB21600EFF00D6786C /* IndexController.swift in Sources */,
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
+				39306E1D2160CB8C00AD3F26 /* C1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
