@@ -22,6 +22,8 @@
 		39A191F42160178700D6786C /* IndexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F32160178700D6786C /* IndexButton.swift */; };
 		39A191F621601BE500D6786C /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F521601BE500D6786C /* UIButtonExtension.swift */; };
 		39A191F82160273100D6786C /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F72160273100D6786C /* SearchField.swift */; };
+		39BF216A21619C46005C64A7 /* LoginSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BF216921619C46005C64A7 /* LoginSignupController.swift */; };
+		39BF216D2161A259005C64A7 /* WelcomeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BF216C2161A259005C64A7 /* WelcomeModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		39A191F32160178700D6786C /* IndexButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexButton.swift; sourceTree = "<group>"; };
 		39A191F521601BE500D6786C /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		39A191F72160273100D6786C /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		39BF216921619C46005C64A7 /* LoginSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupController.swift; sourceTree = "<group>"; };
+		39BF216C2161A259005C64A7 /* WelcomeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 				39A191EA21600EFF00D6786C /* IndexController.swift */,
 				39306E1C2160CB8C00AD3F26 /* C1.swift */,
 				39306E1E2160CBCD00AD3F26 /* C2.swift */,
+				39BF216921619C46005C64A7 /* LoginSignupController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 		39A191E921600EF200D6786C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				39BF216B21619D55005C64A7 /* LoginSignup */,
 				39A191F32160178700D6786C /* IndexButton.swift */,
 				39A191F72160273100D6786C /* SearchField.swift */,
 			);
@@ -187,6 +193,14 @@
 				39A191ED216011EF00D6786C /* Mont-HeavyDEMO.otf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		39BF216B21619D55005C64A7 /* LoginSignup */ = {
+			isa = PBXGroup;
+			children = (
+				39BF216C2161A259005C64A7 /* WelcomeModal.swift */,
+			);
+			path = LoginSignup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39BF216D2161A259005C64A7 /* WelcomeModal.swift in Sources */,
 				39A191F2216015B600D6786C /* UIViewExtension.swift in Sources */,
 				39A191F42160178700D6786C /* IndexButton.swift in Sources */,
 				39306E1F2160CBCD00AD3F26 /* C2.swift in Sources */,
@@ -328,6 +343,7 @@
 				39A191F621601BE500D6786C /* UIButtonExtension.swift in Sources */,
 				39A191F82160273100D6786C /* SearchField.swift in Sources */,
 				39A191EB21600EFF00D6786C /* IndexController.swift in Sources */,
+				39BF216A21619C46005C64A7 /* LoginSignupController.swift in Sources */,
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
 				39306E1D2160CB8C00AD3F26 /* C1.swift in Sources */,
 			);

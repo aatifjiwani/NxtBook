@@ -140,7 +140,7 @@ class IndexController: UIViewController {
     
     @objc func handleButton() {
         print("yo")
-        let control = C2()
+        let control = LoginSignupController()
         present(control, animated: true, completion: nil)
     }
     
