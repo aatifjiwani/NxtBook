@@ -14,6 +14,9 @@ class WelcomeModal: UIView {
         setupViews()
     }
     
+    var controller: LoginSignupController?
+
+    
     let welcomeLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.white
