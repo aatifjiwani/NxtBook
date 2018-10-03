@@ -45,6 +45,9 @@ class LoginSignupController: UIViewController {
         return label
     }()
     
+    let welcomeView = WelcomeModal()
+    
+    
     func setupViews() {
         setupBackground()
         
@@ -60,16 +63,22 @@ class LoginSignupController: UIViewController {
         bookLabel.anchor(nil, left: nxtLabel.rightAnchor, bottom: nxtLabel.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         bookLabel.sizeToFit()
         
-        nxtLabel.dropShadow(color: UIColor.black, opacity: 0.2, offSet: CGSize(width: 0, height: 10), radius: 20)
-        bookLabel.dropShadow(color: UIColor.black, opacity: 0.2, offSet: CGSize(width: 0, height: 10), radius: 20)
+        nxtLabel.dropShadow(color: UIColor.black, opacity: 0.2, offSet: CGSize(width: 0, height: 15), radius: 20)
+        bookLabel.dropShadow(color: UIColor.black, opacity: 0.2, offSet: CGSize(width: 0, height: 15), radius: 20)
         
         view.addSubview(descripLabel)
         descripLabel.anchor(titleView.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 257, heightConstant: 40)
         descripLabel.anchorCenterXToSuperview()
+        
+        view.addSubview(welcomeView)
+        welcomeView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 250)
     }
     
-    
-    
+    override func viewDidLayoutSubviews() {
+        welcomeView.signUp.gradient.frame = welcomeView.signUp.bounds
+        welcomeView.logIn.gradient.frame = welcomeView.logIn.bounds
+    }
+
     func setupBackground() {
         var gradientLayer: CAGradientLayer!
         
