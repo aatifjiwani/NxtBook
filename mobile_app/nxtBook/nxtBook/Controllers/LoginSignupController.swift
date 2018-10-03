@@ -70,10 +70,34 @@ class LoginSignupController: UIViewController {
         descripLabel.anchor(titleView.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 257, heightConstant: 40)
         descripLabel.anchorCenterXToSuperview()
         
-//        view.addSubview(welcomeView)
-//        welcomeView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 250)
+        view.addSubview(welcomeView)
+        welcomeView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 250)
+        welcomeView.controller = self
+        
         view.addSubview(signupView)
         signupView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
+        signupView.controller = self
+        signupView.alpha = 0
+    }
+    
+    func animateToSignUp() {
+        welcomeView.alpha = 1
+        signupView.alpha = 0
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
+            self.welcomeView.alpha = 0
+        }) { (bool) in
+            self.signupView.alpha = 0
+            
+            UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
+                self.signupView.alpha = 1
+            }, completion: { (bool) in
+                self.welcomeView.isHidden = true
+                self.signupView.isHidden = false
+                
+                self.welcomeView.alpha = 0
+
+            })
+        }
     }
     
     override func viewDidLayoutSubviews() {

@@ -24,6 +24,14 @@ class SignupModal: UIView {
         return label
     }()
     
+    let backLabel: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("back", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Futura-Medium", size: 18)
+        return button
+    }()
+    
     let backgroundBox: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.nxtGreen
@@ -61,6 +69,9 @@ class SignupModal: UIView {
         addSubview(signup)
         signup.anchor(nil, left: backgroundBox.leftAnchor, bottom: backgroundBox.topAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 10, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         signup.sizeToFit()
+        
+        addSubview(backLabel)
+        backLabel.anchor(nil, left: nil, bottom: backgroundBox.topAnchor, right: backgroundBox.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 5, rightConstant: 5, widthConstant: 0, heightConstant: 0)
         
         addSubview(venmoAccount)
         venmoAccount.anchorCenterXToSuperview()

@@ -62,6 +62,7 @@ class WelcomeModal: UIView {
         addSubview(signUp)
         signUp.anchor(welcomeLabel.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 280, heightConstant: 50)
         signUp.anchorCenterXToSuperview()
+        signUp.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         
         addSubview(logIn)
         logIn.anchor(signUp.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 15, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 280, heightConstant: 50)
@@ -71,5 +72,13 @@ class WelcomeModal: UIView {
         forgotPass.anchor(logIn.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         forgotPass.anchorCenterXToSuperview()
         forgotPass.sizeToFit()
+    }
+    
+    @objc func handleSignUp() {
+        controller?.animateToSignUp()
+    }
+    
+    func handleLogin() {
+        
     }
 }
