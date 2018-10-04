@@ -38,7 +38,7 @@ class LoginSignupController: UIViewController {
     let descripLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = NSTextAlignment.center
-        label.text = "textbooks sold the right way"
+        label.text = "the best way to textbook"
         label.textColor = UIColor.white
         label.font = UIFont(name: "Futura-Medium", size: 20)
         label.numberOfLines = 2
@@ -84,6 +84,11 @@ class LoginSignupController: UIViewController {
         loginView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
         loginView.controller = self
         loginView.alpha = 0
+    }
+    
+    func handleNativeLogin() {
+        let newController = LoginController()
+        present(newController, animated: true, completion: nil)
     }
     
     func animateToSignUp() {

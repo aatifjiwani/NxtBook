@@ -81,6 +81,7 @@ class LoginModal: UIView {
         addSubview(loginAccount)
         loginAccount.anchorCenterXToSuperview()
         loginAccount.anchor(venmoAccount.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 15, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 245, heightConstant: 45)
+        loginAccount.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
     }
     
     @objc func handleBack() {
@@ -91,8 +92,8 @@ class LoginModal: UIView {
         //do stuff
     }
     
-    func handleLogin() {
-        //do stuff
+    @objc func handleLogin() {
+        controller?.handleNativeLogin()
     }
 }
 
