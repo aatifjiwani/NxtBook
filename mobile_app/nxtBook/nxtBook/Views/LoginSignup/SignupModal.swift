@@ -72,6 +72,7 @@ class SignupModal: UIView {
         
         addSubview(backLabel)
         backLabel.anchor(nil, left: nil, bottom: backgroundBox.topAnchor, right: backgroundBox.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 5, rightConstant: 5, widthConstant: 0, heightConstant: 0)
+        backLabel.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
         
         addSubview(venmoAccount)
         venmoAccount.anchorCenterXToSuperview()
@@ -80,5 +81,17 @@ class SignupModal: UIView {
         addSubview(createAccount)
         createAccount.anchorCenterXToSuperview()
         createAccount.anchor(venmoAccount.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 15, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 245, heightConstant: 45)
+    }
+    
+    @objc func handleBack() {
+        controller?.animateBackToIndex()
+    }
+    
+    func handleVenmo() {
+       //do stuff
+    }
+    
+    func handleCreate() {
+        //do stuff
     }
 }

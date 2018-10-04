@@ -91,11 +91,25 @@ class LoginSignupController: UIViewController {
             UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
                 self.signupView.alpha = 1
             }, completion: { (bool) in
-                self.welcomeView.isHidden = true
-                self.signupView.isHidden = false
-                
                 self.welcomeView.alpha = 0
 
+            })
+        }
+    }
+    
+    func animateBackToIndex() {
+        welcomeView.alpha = 0
+        signupView.alpha = 1
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
+            self.signupView.alpha = 0
+        }) { (bool) in
+            self.welcomeView.alpha = 0
+            self.signupView.alpha = 0
+            UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
+                self.welcomeView.alpha = 1
+            }, completion: { (bool) in
+                self.welcomeView.alpha = 1
+                
             })
         }
     }
