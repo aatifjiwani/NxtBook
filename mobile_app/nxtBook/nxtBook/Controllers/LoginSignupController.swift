@@ -47,6 +47,7 @@ class LoginSignupController: UIViewController {
     
     let welcomeView = WelcomeModal()
     let signupView = SignupModal()
+    let loginView = LoginModal()
     
     func setupViews() {
         setupBackground()
@@ -78,33 +79,58 @@ class LoginSignupController: UIViewController {
         signupView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
         signupView.controller = self
         signupView.alpha = 0
+        
+        view.addSubview(loginView)
+        loginView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
+        loginView.controller = self
+        loginView.alpha = 0
     }
     
     func animateToSignUp() {
         welcomeView.alpha = 1
         signupView.alpha = 0
+        loginView.alpha = 0
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
             self.welcomeView.alpha = 0
         }) { (bool) in
             self.signupView.alpha = 0
-            
+            self.loginView.alpha = 0
             UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
                 self.signupView.alpha = 1
             }, completion: { (bool) in
                 self.welcomeView.alpha = 0
-
+                self.loginView.alpha = 0
+            })
+        }
+    }
+    
+    func animateToLogin() {
+        welcomeView.alpha = 1
+        signupView.alpha = 0
+        loginView.alpha = 0
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
+            self.welcomeView.alpha = 0
+        }) { (bool) in
+            self.signupView.alpha = 0
+            self.loginView.alpha = 0
+            UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
+                self.loginView.alpha = 1
+            }, completion: { (bool) in
+                self.welcomeView.alpha = 0
+                self.signupView.alpha = 0
             })
         }
     }
     
     func animateBackToIndex() {
         welcomeView.alpha = 0
-        signupView.alpha = 1
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
             self.signupView.alpha = 0
+            self.loginView.alpha = 0
         }) { (bool) in
             self.welcomeView.alpha = 0
             self.signupView.alpha = 0
+            self.loginView.alpha = 0
             UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
                 self.welcomeView.alpha = 1
             }, completion: { (bool) in
@@ -120,6 +146,9 @@ class LoginSignupController: UIViewController {
         
         signupView.createAccount.gradient.frame = signupView.createAccount.bounds
         signupView.venmoAccount.gradient.frame = signupView.venmoAccount.bounds
+        
+        loginView.loginAccount.gradient.frame = loginView.loginAccount.bounds
+        loginView.venmoAccount.gradient.frame = loginView.venmoAccount.bounds
     }
 
     func setupBackground() {
