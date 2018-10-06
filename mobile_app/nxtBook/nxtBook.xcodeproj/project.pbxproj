@@ -15,6 +15,7 @@
 		397B3CEC21659236003BAF0C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CEB21659236003BAF0C /* LoginController.swift */; };
 		397B3CEF21659335003BAF0C /* NativeLoginModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CEE21659335003BAF0C /* NativeLoginModal.swift */; };
 		397B3CF121659523003BAF0C /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CF021659523003BAF0C /* BackgroundView.swift */; };
+		398A9FC62168579A007F97B9 /* CredentialField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A9FC52168579A007F97B9 /* CredentialField.swift */; };
 		39A191B921600E2600D6786C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191B821600E2600D6786C /* AppDelegate.swift */; };
 		39A191BE21600E2600D6786C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BC21600E2600D6786C /* Main.storyboard */; };
 		39A191C021600E2600D6786C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BF21600E2600D6786C /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		397B3CEB21659236003BAF0C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		397B3CEE21659335003BAF0C /* NativeLoginModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeLoginModal.swift; sourceTree = "<group>"; };
 		397B3CF021659523003BAF0C /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		398A9FC52168579A007F97B9 /* CredentialField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialField.swift; sourceTree = "<group>"; };
 		39A191B521600E2600D6786C /* nxtBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nxtBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A191B821600E2600D6786C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39A191BD21600E2600D6786C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				397B3CEE21659335003BAF0C /* NativeLoginModal.swift */,
 				397B3CF021659523003BAF0C /* BackgroundView.swift */,
+				398A9FC52168579A007F97B9 /* CredentialField.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39BF216D2161A259005C64A7 /* WelcomeModal.swift in Sources */,
+				398A9FC62168579A007F97B9 /* CredentialField.swift in Sources */,
 				39A191F2216015B600D6786C /* UIViewExtension.swift in Sources */,
 				39A191F42160178700D6786C /* IndexButton.swift in Sources */,
 				39306E1F2160CBCD00AD3F26 /* C2.swift in Sources */,

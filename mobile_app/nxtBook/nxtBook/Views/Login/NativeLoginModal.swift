@@ -38,6 +38,30 @@ class NativeLoginModal: UIView {
         return button
     }()
     
+    let usernameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "username:"
+        label.textColor = UIColor.white
+        label.font = UIFont(name: "Futura-Medium", size: 24)
+        return label
+    }()
+    
+    let passwordLabel: UILabel = {
+        let label = UILabel()
+        label.text = "password:"
+        label.textColor = UIColor.white
+        label.font = UIFont(name: "Futura-Medium", size: 24)
+        return label
+    }()
+    
+    let usernameField = CredentialField()
+    
+    let passwordField: CredentialField = {
+        let field = CredentialField()
+        field.isSecureTextEntry = true
+        return field
+    }()
+    
     func setupViews() {
         addSubview(loginLabel)
         loginLabel.anchor(topAnchor, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
@@ -53,6 +77,20 @@ class NativeLoginModal: UIView {
         backButton.anchor(backgroundBox.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         backButton.sizeToFit()
         backButton.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
+        
+        addSubview(usernameLabel)
+        usernameLabel.anchor(backgroundBox.topAnchor, left: backgroundBox.leftAnchor, bottom: nil, right: nil, topConstant: 10, leftConstant: 20, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        usernameLabel.sizeToFit()
+        
+        addSubview(usernameField)
+        usernameField.anchor(usernameLabel.bottomAnchor, left: usernameLabel.leftAnchor, bottom: nil, right: backgroundBox.rightAnchor, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 20, widthConstant: 0, heightConstant: 30)
+        
+        addSubview(passwordLabel)
+        passwordLabel.anchor(usernameField.bottomAnchor, left: usernameLabel.leftAnchor, bottom: nil, right: nil, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        passwordLabel.sizeToFit()
+        
+        addSubview(passwordField)
+        passwordField.anchor(passwordLabel.bottomAnchor, left: passwordLabel.leftAnchor, bottom: nil, right: backgroundBox.rightAnchor, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 20, widthConstant: 0, heightConstant: 30)
     }
     
     @objc func handleBack() {
