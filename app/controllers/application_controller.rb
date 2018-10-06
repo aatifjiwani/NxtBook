@@ -23,7 +23,8 @@ class ApplicationController < ActionController::API
   end
   
   def verify_api_token
-    binding.pry
+    puts params[:token]
+    puts Rails.application.credentials.dig(:api_token)
     if params[:token] != Rails.application.credentials.dig(:api_token) 
       render json: {
         "status": "error",
