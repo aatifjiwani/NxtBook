@@ -16,6 +16,8 @@
 		397B3CEF21659335003BAF0C /* NativeLoginModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CEE21659335003BAF0C /* NativeLoginModal.swift */; };
 		397B3CF121659523003BAF0C /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CF021659523003BAF0C /* BackgroundView.swift */; };
 		398A9FC62168579A007F97B9 /* CredentialField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A9FC52168579A007F97B9 /* CredentialField.swift */; };
+		398A9FC821685DBF007F97B9 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A9FC721685DBF007F97B9 /* APIServices.swift */; };
+		398A9FCA21685E14007F97B9 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A9FC921685E14007F97B9 /* Secrets.swift */; };
 		39A191B921600E2600D6786C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191B821600E2600D6786C /* AppDelegate.swift */; };
 		39A191BE21600E2600D6786C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BC21600E2600D6786C /* Main.storyboard */; };
 		39A191C021600E2600D6786C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BF21600E2600D6786C /* Assets.xcassets */; };
@@ -60,6 +62,8 @@
 		397B3CEE21659335003BAF0C /* NativeLoginModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeLoginModal.swift; sourceTree = "<group>"; };
 		397B3CF021659523003BAF0C /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		398A9FC52168579A007F97B9 /* CredentialField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialField.swift; sourceTree = "<group>"; };
+		398A9FC721685DBF007F97B9 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		398A9FC921685E14007F97B9 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		39A191B521600E2600D6786C /* nxtBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nxtBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A191B821600E2600D6786C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39A191BD21600E2600D6786C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				39A191EF2160140300D6786C /* Colors.swift */,
 				39A191F1216015B600D6786C /* UIViewExtension.swift */,
 				39A191F521601BE500D6786C /* UIButtonExtension.swift */,
+				398A9FC721685DBF007F97B9 /* APIServices.swift */,
+				398A9FC921685E14007F97B9 /* Secrets.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39BF216D2161A259005C64A7 /* WelcomeModal.swift in Sources */,
+				398A9FCA21685E14007F97B9 /* Secrets.swift in Sources */,
 				398A9FC62168579A007F97B9 /* CredentialField.swift in Sources */,
 				39A191F2216015B600D6786C /* UIViewExtension.swift in Sources */,
 				39A191F42160178700D6786C /* IndexButton.swift in Sources */,
@@ -377,6 +384,7 @@
 				39A191F82160273100D6786C /* SearchField.swift in Sources */,
 				39A191EB21600EFF00D6786C /* IndexController.swift in Sources */,
 				397B3CEA21658FD0003BAF0C /* LoginModal.swift in Sources */,
+				398A9FC821685DBF007F97B9 /* APIServices.swift in Sources */,
 				39BF216A21619C46005C64A7 /* LoginSignupController.swift in Sources */,
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
 				39306E1D2160CB8C00AD3F26 /* C1.swift in Sources */,

@@ -40,7 +40,7 @@ class NativeLoginModal: UIView {
     
     let usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "username:"
+        label.text = "email:"
         label.textColor = UIColor.white
         label.font = UIFont(name: "Futura-Medium", size: 24)
         return label
