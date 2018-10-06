@@ -11,7 +11,7 @@ import UIKit
 class APIServices {
     static let baseURL = "https://nxtbook.herokuapp.com"
     
-    static func loginUser(email: String, password: String, completion: @escaping ([String: Any]) -> ()) {
+    static func loginUser(email: String, password: String, completion: @escaping ([String: Any]?, Int) -> ()) {
         let url = URL(string: "\(baseURL)/login/?token=\(Secrets.appKey)")!
         let json: [String: Any] = [
             "user": [
@@ -19,8 +19,8 @@ class APIServices {
                 "password": password.trimmingCharacters(in: .whitespacesAndNewlines)
             ]]
         
-        makeAPICallWithResponse(url: url, method: "POST", dict: json) { (response) in
-            completion(response)
+        makeAPICallWithResponse(url: url, method: "POST", dict: json) { (response, status) in
+            completion(response, status)
         }
     }
     
@@ -34,12 +34,12 @@ class APIServices {
                 "password_confirmation": confPassword.trimmingCharacters(in: .whitespacesAndNewlines)
             ]]
         
-        makeAPICallWithResponse(url: url, method: "POST", dict: json) { (response) in
-            completion(response)
-        }
+//        makeAPICallWithResponse(url: url, method: "POST", dict: json) { (response) in
+//            completion(response)
+//        }
     }
     
-    private static func makeAPICallWithResponse(url: URL, method: String, dict: [String: Any]?, completion: @escaping ([String: Any]) -> ()) {
+    private static func makeAPICallWithResponse(url: URL, method: String, dict: [String: Any]?, completion: @escaping ([String: Any]?, Int) -> ()) {
         
         
         // create post request
@@ -55,16 +55,29 @@ class APIServices {
         
         URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
             if error != nil{
+                if let httpResponse = response as? HTTPURLResponse {
+                    print(httpResponse.statusCode)
+                }
                 print("Getting Error -> \(error!)")
                 return
             }
             
             do {
-                let result = try JSONSerialization.jsonObject(with: data!, options: []) as? [String:Any]
+                if let httpResponse = response as? HTTPURLResponse {
+                    let status = httpResponse.statusCode
+                    if status == 200 {
+                        let result = try JSONSerialization.jsonObject(with: data!, options: []) as? [String:Any]
+                        
+                        DispatchQueue.main.async(execute: {
+                            completion(result!, status)
+                        })
+                    } else {
+                        DispatchQueue.main.async(execute: {
+                            completion(nil, status)
+                        })
+                    }
+                }
                 
-                DispatchQueue.main.async(execute: {
-                    completion(result!)
-                })
                 
             } catch {
                 print("Parsing Error -> \(error)")

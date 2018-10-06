@@ -1,0 +1,31 @@
+//
+//  UserDefaultsExtension.swift
+//  nxtBook
+//
+//  Created by Aatif Jiwani on 10/5/18.
+//  Copyright © 2018 Aatif Jiwani. All rights reserved.
+//
+
+import UIKit
+
+extension UserDefaults {
+    func setIsLoggedIn(value: Bool) {
+        set(value, forKey: "isLoggedIn")
+        synchronize()
+    }
+    
+    func isLoggedIn() -> Bool {
+        return bool(forKey: "isLoggedIn")
+    }
+    
+    func setUser(value: Int) {
+        set(value, forKey: "loggedInUser")
+    }
+    
+    func getUser() -> Int {
+        return integer(forKey: "loggedInUser")
+    }
+    
+    
+    
+}

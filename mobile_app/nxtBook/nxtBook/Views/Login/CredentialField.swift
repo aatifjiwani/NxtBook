@@ -33,6 +33,10 @@ class CredentialField: UITextField {
     }
     
     func setupViews() {
+        autocorrectionType = .no
+        autocapitalizationType = .none
+        spellCheckingType = .no
+        
         backgroundColor = UIColor.white
         layer.masksToBounds = true
         layer.cornerRadius = 8

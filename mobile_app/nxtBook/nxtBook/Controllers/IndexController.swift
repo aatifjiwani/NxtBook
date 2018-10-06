@@ -26,6 +26,12 @@ class IndexController: UIViewController {
         setupViews()
     }
     
+    var user: User? {
+        didSet {
+            print("user \((user?.username)!) has logged in")
+        }
+    }
+    
     let titleBar: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.nxtOrange
@@ -141,6 +147,7 @@ class IndexController: UIViewController {
     @objc func handleButton() {
         print("yo")
         let control = LoginSignupController()
+        control.indexController = self
         present(control, animated: true, completion: nil)
     }
     

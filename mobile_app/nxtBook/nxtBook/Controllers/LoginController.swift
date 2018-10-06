@@ -14,6 +14,8 @@ class LoginController: UIViewController {
         setupViews()
     }
     
+    var indexController: IndexController?
+    
     let loginModal = NativeLoginModal()
     
     func setupViews() {
@@ -22,6 +24,7 @@ class LoginController: UIViewController {
         view.addSubview(loginModal)
         loginModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 100, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
         loginModal.controller = self
+        loginModal.indexController = indexController
     }
     
     override func viewDidLayoutSubviews() {

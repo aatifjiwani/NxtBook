@@ -14,6 +14,8 @@ class NativeLoginModal: UIView {
         setupViews()
     }
     
+    var indexController: IndexController?
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -28,7 +30,7 @@ class NativeLoginModal: UIView {
         return label
     }()
     
-    let backgroundBox = BackgroundView(frame: CGRect(x: 0, y: 0, width: 350, height: 200))
+    let backgroundBox = BackgroundView(frame: CGRect(x: 0, y: 0, width: 350, height: 260))
     
     let backButton: UIButton = {
         let button = UIButton(type: .system)
@@ -62,6 +64,17 @@ class NativeLoginModal: UIView {
         return field
     }()
     
+    let loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = Colors.nxtBlue
+        button.setTitle("Login", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Futura-Medium", size: 18)
+        button.layer.cornerRadius = 25
+        button.clipsToBounds = true
+        return button
+    }()
+    
     func setupViews() {
         addSubview(loginLabel)
         loginLabel.anchor(topAnchor, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
@@ -70,7 +83,7 @@ class NativeLoginModal: UIView {
         
         addSubview(backgroundBox)
         backgroundBox.anchorCenterXToSuperview()
-        backgroundBox.anchor(loginLabel.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 350, heightConstant: 200)
+        backgroundBox.anchor(loginLabel.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 350, heightConstant: 260)
         
         addSubview(backButton)
         backButton.anchorCenterXToSuperview()
@@ -91,6 +104,28 @@ class NativeLoginModal: UIView {
         
         addSubview(passwordField)
         passwordField.anchor(passwordLabel.bottomAnchor, left: passwordLabel.leftAnchor, bottom: nil, right: backgroundBox.rightAnchor, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 20, widthConstant: 0, heightConstant: 30)
+        
+        addSubview(loginButton)
+        loginButton.anchorCenterXToSuperview()
+        loginButton.anchor(nil, left: nil, bottom: backgroundBox.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 20, rightConstant: 0, widthConstant: 100, heightConstant: 50)
+        loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+    }
+    
+    @objc func handleLogin() {
+        if let email = usernameField.text , let password = passwordField.text {
+            APIServices.loginUser(email: email, password: password) { (response, status) in
+                if status == 200 {
+                    print(response!)
+                    let user = User(json: response!)
+                    UserDefaults.standard.setIsLoggedIn(value: true)
+                    UserDefaults.standard.setUser(value: user.id!)
+                    self.indexController?.user = user
+                    self.indexController?.dismiss(animated: true, completion: nil)
+                } else {
+                    print("error")
+                }
+            }
+        }
     }
     
     @objc func handleBack() {

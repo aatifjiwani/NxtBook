@@ -14,6 +14,8 @@ class LoginSignupController: UIViewController {
         setupViews()
     }
     
+    var indexController: IndexController?
+    
     let nxtLabel: UILabel = {
         let label = UILabel()
         label.text = "nxt"
@@ -88,6 +90,7 @@ class LoginSignupController: UIViewController {
     
     func handleNativeLogin() {
         let newController = LoginController()
+        newController.indexController = indexController
         present(newController, animated: true, completion: nil)
     }
     
