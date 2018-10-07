@@ -23,7 +23,7 @@ class LoginController: UIViewController {
         setupBackground()
         
         view.addSubview(loginModal)
-        loginModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 100, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
+        loginModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 100, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 400)
         loginModal.controller = self
         loginModal.indexController = indexController
     }

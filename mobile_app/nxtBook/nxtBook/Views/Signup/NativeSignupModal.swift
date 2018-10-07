@@ -144,8 +144,29 @@ class NativeSignupModal: UIView {
     }
     
     @objc func handleSignup() {
-        print("stuff")
-    }
+        guard let email = emailField.text, let password = passwordField.text, let first = firstnameField.text, let last = lastnameField.text else {
+            return
+        }
+        
+        APIServices.signupUser(lastname: last, email: email, password: password, firstname: first) { (response, status) in
+            if status == 200 {
+                print(response!)
+                let user = User(json: response!)
+                UserDefaults.standard.setIsLoggedIn(value: true)
+                UserDefaults.standard.setUser(value: user.id!)
+
+                let viewController = IndexController()
+                viewController.user = user
+                let transition = CATransition()
+                transition.type = kCATransitionFromBottom
+                if let window = UIApplication.shared.keyWindow {
+                    window.set(rootViewController: viewController, withTransition: transition)
+                }
+            } else {
+                print("error")
+            }
+        }
+        }
     
     @objc func handleBack() {
         print("yo")

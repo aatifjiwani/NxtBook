@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "nxtBook/Controllers/IndexController.swift"
-            timestampString = "560563820.376915"
+            timestampString = "560566689.611141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "setupViews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "nxtBook/Controllers/IndexController.swift"
-            timestampString = "560563820.377007"
+            timestampString = "560566689.6112159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "IndexController"
             landmarkType = "3">
          </BreakpointContent>

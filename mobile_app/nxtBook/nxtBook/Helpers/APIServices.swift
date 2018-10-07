@@ -24,19 +24,21 @@ class APIServices {
         }
     }
     
-    static func signupUser(username: String, email: String, password: String, confPassword: String, completion: @escaping ([String: Any]) -> ()) {
-        let url = URL(string: "\(baseURL)/api/registrations?token=\(Secrets.appKey)")!
+    static func signupUser(lastname: String, email: String, password: String, firstname: String, completion: @escaping ([String: Any]?, Int) -> ()) {
+        let url = URL(string: "\(baseURL)/signup/?token=\(Secrets.appKey)")!
+        let username = "\(firstname)\(lastname)"
         let json: [String: Any] = [
             "user": [
-                "username": username.trimmingCharacters(in: .whitespacesAndNewlines),
+                "firstname": firstname.trimmingCharacters(in: .whitespacesAndNewlines),
                 "email": email.trimmingCharacters(in: .whitespacesAndNewlines),
                 "password": password.trimmingCharacters(in: .whitespacesAndNewlines),
-                "password_confirmation": confPassword.trimmingCharacters(in: .whitespacesAndNewlines)
+                "lastname": lastname.trimmingCharacters(in: .whitespacesAndNewlines),
+                "username": username
             ]]
         
-//        makeAPICallWithResponse(url: url, method: "POST", dict: json) { (response) in
-//            completion(response)
-//        }
+        makeAPICallWithResponse(url: url, method: "POST", dict: json) { (response, status) in
+            completion(response, status)
+        }
     }
     
     private static func makeAPICallWithResponse(url: URL, method: String, dict: [String: Any]?, completion: @escaping ([String: Any]?, Int) -> ()) {

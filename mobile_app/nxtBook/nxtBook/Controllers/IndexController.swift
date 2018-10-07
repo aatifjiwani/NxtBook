@@ -24,8 +24,8 @@ class IndexController: UIViewController {
 //        }
         
         
-        //checkUserLoggedIn()
-        setupViews()
+        checkUserLoggedIn()
+//        setupViews()
     }
     
     var user: User? {
@@ -106,11 +106,16 @@ class IndexController: UIViewController {
     
     func checkUserLoggedIn() {
         if UserDefaults.standard.isLoggedIn() {
+            setupViews()
             print("already logged in \(UserDefaults.standard.getUser())")
         } else {
-            let control = LoginSignupController()
-            control.indexController = self
-            present(control, animated: true, completion: nil)
+            let viewController = LoginSignupController()
+            viewController.indexController = self
+            let transition = CATransition()
+            transition.type = kCATransitionFromBottom
+            if let window = UIApplication.shared.keyWindow {
+                window.set(rootViewController: viewController, withTransition: transition)
+            }
         }
     }
     
@@ -171,17 +176,29 @@ class IndexController: UIViewController {
     
     @objc func handleLogout() {
         UserDefaults.standard.setIsLoggedIn(value: false)
-        let control = LoginSignupController()
-        control.indexController = self
-        present(control, animated: true, completion: nil)
+        let viewController = LoginSignupController()
+        viewController.indexController = self
+        let transition = CATransition()
+        transition.type = kCATransitionFromBottom
+        if let window = UIApplication.shared.keyWindow {
+            window.set(rootViewController: viewController, withTransition: transition)
+        }
+
         
     }
     
     @objc func handleButton() {
-        print("yo")
-        let control = LoginSignupController()
-        control.indexController = self
-        present(control, animated: true, completion: nil)
+        let viewController = LoginSignupController()
+        viewController.indexController = self
+        let transition = CATransition()
+        transition.type = kCATransitionFromBottom
+        if let window = UIApplication.shared.keyWindow {
+            window.set(rootViewController: viewController, withTransition: transition)
+        }
+//        print("yo")
+//        let control = LoginSignupController()
+//        control.indexController = self
+//        present(control, animated: true, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {

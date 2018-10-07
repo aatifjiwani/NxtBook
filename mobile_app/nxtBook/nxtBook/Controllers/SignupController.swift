@@ -23,7 +23,7 @@ class SignupController: UIViewController {
         setupBackground()
         
         view.addSubview(signupModal)
-        signupModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 100, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
+        signupModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 100, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 600)
         signupModal.controller = self
         signupModal.indexController = indexController
     }

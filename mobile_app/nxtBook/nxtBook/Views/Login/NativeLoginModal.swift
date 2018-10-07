@@ -32,11 +32,12 @@ class NativeLoginModal: UIView {
     
     let backgroundBox = BackgroundView(frame: CGRect(x: 0, y: 0, width: 350, height: 260))
     
-    let backButton: UIButton = {
+    let backToIndexButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("back", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Futura-Medium", size: 18)
+        button.isMultipleTouchEnabled = true
         return button
     }()
     
@@ -85,11 +86,9 @@ class NativeLoginModal: UIView {
         backgroundBox.anchorCenterXToSuperview()
         backgroundBox.anchor(loginLabel.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 350, heightConstant: 260)
         
-        addSubview(backButton)
-        backButton.anchorCenterXToSuperview()
-        backButton.anchor(backgroundBox.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        backButton.sizeToFit()
-        backButton.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
+        addSubview(backToIndexButton)
+        backToIndexButton.anchorCenterXToSuperview()
+        backToIndexButton.anchor(backgroundBox.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 40)
         
         addSubview(usernameLabel)
         usernameLabel.anchor(backgroundBox.topAnchor, left: backgroundBox.leftAnchor, bottom: nil, right: nil, topConstant: 10, leftConstant: 20, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
@@ -109,6 +108,7 @@ class NativeLoginModal: UIView {
         loginButton.anchorCenterXToSuperview()
         loginButton.anchor(nil, left: nil, bottom: backgroundBox.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 20, rightConstant: 0, widthConstant: 100, heightConstant: 50)
         loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        backToIndexButton.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
     }
     
     @objc func handleLogin() {
@@ -119,8 +119,16 @@ class NativeLoginModal: UIView {
                     let user = User(json: response!)
                     UserDefaults.standard.setIsLoggedIn(value: true)
                     UserDefaults.standard.setUser(value: user.id!)
-                    self.indexController?.user = user
-                    self.indexController?.dismiss(animated: true, completion: nil)
+                    
+                    let viewController = IndexController()
+                    viewController.user = user
+                    let transition = CATransition()
+                    transition.type = kCATransitionFromBottom
+                    if let window = UIApplication.shared.keyWindow {
+                        window.set(rootViewController: viewController, withTransition: transition)
+                    }
+
+                    
                 } else {
                     print("error")
                 }

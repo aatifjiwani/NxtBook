@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		39306E1D2160CB8C00AD3F26 /* C1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39306E1C2160CB8C00AD3F26 /* C1.swift */; };
 		39306E1F2160CBCD00AD3F26 /* C2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39306E1E2160CBCD00AD3F26 /* C2.swift */; };
+		3967CE20216988FC00EA5476 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */; };
 		397B3CE62165830A003BAF0C /* AccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CE52165830A003BAF0C /* AccountButton.swift */; };
 		397B3CE8216587EB003BAF0C /* SignupModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CE7216587EB003BAF0C /* SignupModal.swift */; };
 		397B3CEA21658FD0003BAF0C /* LoginModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CE921658FD0003BAF0C /* LoginModal.swift */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		39306E1C2160CB8C00AD3F26 /* C1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C1.swift; sourceTree = "<group>"; };
 		39306E1E2160CBCD00AD3F26 /* C2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2.swift; sourceTree = "<group>"; };
+		3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		397B3CE52165830A003BAF0C /* AccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountButton.swift; sourceTree = "<group>"; };
 		397B3CE7216587EB003BAF0C /* SignupModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModal.swift; sourceTree = "<group>"; };
 		397B3CE921658FD0003BAF0C /* LoginModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModal.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				398A9FC721685DBF007F97B9 /* APIServices.swift */,
 				398A9FC921685E14007F97B9 /* Secrets.swift */,
 				398A9FCD216864E7007F97B9 /* UserDefaultsExtension.swift */,
+				3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39BF216D2161A259005C64A7 /* WelcomeModal.swift in Sources */,
+				3967CE20216988FC00EA5476 /* UIWindowExtension.swift in Sources */,
 				398A9FCA21685E14007F97B9 /* Secrets.swift in Sources */,
 				398A9FC62168579A007F97B9 /* CredentialField.swift in Sources */,
 				39A191F2216015B600D6786C /* UIViewExtension.swift in Sources */,
