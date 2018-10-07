@@ -20,6 +20,8 @@
 		398A9FCA21685E14007F97B9 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A9FC921685E14007F97B9 /* Secrets.swift */; };
 		398A9FCC21686456007F97B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A9FCB21686456007F97B9 /* User.swift */; };
 		398A9FCE216864E7007F97B9 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A9FCD216864E7007F97B9 /* UserDefaultsExtension.swift */; };
+		398A9FD121698015007F97B9 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A9FD021698015007F97B9 /* SignupController.swift */; };
+		398A9FD3216980D2007F97B9 /* NativeSignupModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A9FD2216980D2007F97B9 /* NativeSignupModal.swift */; };
 		39A191B921600E2600D6786C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191B821600E2600D6786C /* AppDelegate.swift */; };
 		39A191BE21600E2600D6786C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BC21600E2600D6786C /* Main.storyboard */; };
 		39A191C021600E2600D6786C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BF21600E2600D6786C /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 		398A9FC921685E14007F97B9 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		398A9FCB21686456007F97B9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		398A9FCD216864E7007F97B9 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		398A9FD021698015007F97B9 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+		398A9FD2216980D2007F97B9 /* NativeSignupModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeSignupModal.swift; sourceTree = "<group>"; };
 		39A191B521600E2600D6786C /* nxtBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nxtBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A191B821600E2600D6786C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39A191BD21600E2600D6786C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +128,14 @@
 				398A9FC52168579A007F97B9 /* CredentialField.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		398A9FCF21697FEB007F97B9 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				398A9FD2216980D2007F97B9 /* NativeSignupModal.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		39A191AC21600E2600D6786C = {
@@ -189,6 +201,7 @@
 				39306E1E2160CBCD00AD3F26 /* C2.swift */,
 				39BF216921619C46005C64A7 /* LoginSignupController.swift */,
 				397B3CEB21659236003BAF0C /* LoginController.swift */,
+				398A9FD021698015007F97B9 /* SignupController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -217,6 +230,7 @@
 		39A191E921600EF200D6786C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				398A9FCF21697FEB007F97B9 /* Signup */,
 				397B3CED21659328003BAF0C /* Login */,
 				39BF216B21619D55005C64A7 /* LoginSignup */,
 				39A191F32160178700D6786C /* IndexButton.swift */,
@@ -380,6 +394,7 @@
 				398A9FCA21685E14007F97B9 /* Secrets.swift in Sources */,
 				398A9FC62168579A007F97B9 /* CredentialField.swift in Sources */,
 				39A191F2216015B600D6786C /* UIViewExtension.swift in Sources */,
+				398A9FD3216980D2007F97B9 /* NativeSignupModal.swift in Sources */,
 				39A191F42160178700D6786C /* IndexButton.swift in Sources */,
 				39306E1F2160CBCD00AD3F26 /* C2.swift in Sources */,
 				397B3CEC21659236003BAF0C /* LoginController.swift in Sources */,
@@ -392,6 +407,7 @@
 				39A191EB21600EFF00D6786C /* IndexController.swift in Sources */,
 				397B3CEA21658FD0003BAF0C /* LoginModal.swift in Sources */,
 				398A9FC821685DBF007F97B9 /* APIServices.swift in Sources */,
+				398A9FD121698015007F97B9 /* SignupController.swift in Sources */,
 				39BF216A21619C46005C64A7 /* LoginSignupController.swift in Sources */,
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
 				39306E1D2160CB8C00AD3F26 /* C1.swift in Sources */,

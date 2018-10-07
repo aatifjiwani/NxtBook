@@ -129,6 +129,7 @@ class NativeLoginModal: UIView {
     }
     
     @objc func handleBack() {
+        print("yo")
         controller?.handleBack()
     }
 }

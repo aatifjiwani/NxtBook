@@ -1,14 +1,14 @@
 //
-//  LoginController.swift
+//  SignupController.swift
 //  nxtBook
 //
-//  Created by Aatif Jiwani on 10/3/18.
+//  Created by Aatif Jiwani on 10/6/18.
 //  Copyright © 2018 Aatif Jiwani. All rights reserved.
 //
 
 import UIKit
 
-class LoginController: UIViewController {
+class SignupController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -17,19 +17,19 @@ class LoginController: UIViewController {
     
     var indexController: IndexController?
     
-    let loginModal = NativeLoginModal()
+    let signupModal = NativeSignupModal()
     
     func setupViews() {
         setupBackground()
         
-        view.addSubview(loginModal)
-        loginModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 100, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
-        loginModal.controller = self
-        loginModal.indexController = indexController
+        view.addSubview(signupModal)
+        signupModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 100, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
+        signupModal.controller = self
+        signupModal.indexController = indexController
     }
     
     override func viewDidLayoutSubviews() {
-        loginModal.backgroundBox.gradient.frame = loginModal.backgroundBox.bounds
+        signupModal.backgroundBox.gradient.frame = signupModal.backgroundBox.bounds
     }
     
     func handleBack() {

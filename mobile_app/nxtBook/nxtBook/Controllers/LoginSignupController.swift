@@ -11,6 +11,7 @@ import UIKit
 class LoginSignupController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         setupViews()
     }
     
@@ -90,6 +91,12 @@ class LoginSignupController: UIViewController {
     
     func handleNativeLogin() {
         let newController = LoginController()
+        newController.indexController = indexController
+        present(newController, animated: true, completion: nil)
+    }
+    
+    func handleNativeSignup() {
+        let newController = SignupController()
         newController.indexController = indexController
         present(newController, animated: true, completion: nil)
     }

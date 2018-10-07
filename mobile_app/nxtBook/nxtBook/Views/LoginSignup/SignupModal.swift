@@ -81,6 +81,7 @@ class SignupModal: UIView {
         addSubview(createAccount)
         createAccount.anchorCenterXToSuperview()
         createAccount.anchor(venmoAccount.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 15, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 245, heightConstant: 45)
+        createAccount.addTarget(self, action: #selector(handleCreate), for: .touchUpInside)
     }
     
     @objc func handleBack() {
@@ -91,7 +92,7 @@ class SignupModal: UIView {
        //do stuff
     }
     
-    func handleCreate() {
-        //do stuff
+    @objc func handleCreate() {
+        controller?.handleNativeSignup()
     }
 }

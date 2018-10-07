@@ -14,15 +14,17 @@ class IndexController: UIViewController {
         view.backgroundColor = UIColor.red
         navigationController?.navigationBar.isHidden = true
         
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
+//        for family: String in UIFont.familyNames
+//        {
+//            print("\(family)")
+//            for names: String in UIFont.fontNames(forFamilyName: family)
+//            {
+//                print("== \(names)")
+//            }
+//        }
         
+        
+        //checkUserLoggedIn()
         setupViews()
     }
     
@@ -94,9 +96,32 @@ class IndexController: UIViewController {
         return label
     }()
     
+    let logoutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Logout", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Futura-Medium", size: 20)
+        return button
+    }()
+    
+    func checkUserLoggedIn() {
+        if UserDefaults.standard.isLoggedIn() {
+            print("already logged in \(UserDefaults.standard.getUser())")
+        } else {
+            let control = LoginSignupController()
+            control.indexController = self
+            present(control, animated: true, completion: nil)
+        }
+    }
+    
     
     func setupViews() {
         setupBackground()
+        
+        view.addSubview(logoutButton)
+        logoutButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 25, leftConstant: 0, bottomConstant: 0, rightConstant: 30, widthConstant: 0, heightConstant: 0)
+        logoutButton.sizeToFit()
+        logoutButton.addTarget(self, action: #selector(handleLogout), for: .touchUpInside)
         
         view.addSubview(nxtLabel)
         nxtLabel.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, topConstant: 75, leftConstant: 55, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
@@ -141,6 +166,14 @@ class IndexController: UIViewController {
         searchLabel.anchorCenterXToSuperview()
         searchLabel.anchor(nil, left: nil, bottom: search.topAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 20, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         searchLabel.sizeToFit()
+        
+    }
+    
+    @objc func handleLogout() {
+        UserDefaults.standard.setIsLoggedIn(value: false)
+        let control = LoginSignupController()
+        control.indexController = self
+        present(control, animated: true, completion: nil)
         
     }
     
