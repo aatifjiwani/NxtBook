@@ -42,6 +42,8 @@
 		39E54573216ED0EA003B79C5 /* AboutTopModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E54572216ED0EA003B79C5 /* AboutTopModal.swift */; };
 		39E54575216ED512003B79C5 /* GBBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E54574216ED512003B79C5 /* GBBackgroundView.swift */; };
 		39E54577216ED54F003B79C5 /* AboutBotModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E54576216ED54F003B79C5 /* AboutBotModal.swift */; };
+		39E54579216ED9C4003B79C5 /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E54578216ED9C4003B79C5 /* TutorialController.swift */; };
+		39E5457C216EDAE6003B79C5 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5457B216EDAE6003B79C5 /* Welcome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		39E54572216ED0EA003B79C5 /* AboutTopModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTopModal.swift; sourceTree = "<group>"; };
 		39E54574216ED512003B79C5 /* GBBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBBackgroundView.swift; sourceTree = "<group>"; };
 		39E54576216ED54F003B79C5 /* AboutBotModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutBotModal.swift; sourceTree = "<group>"; };
+		39E54578216ED9C4003B79C5 /* TutorialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
+		39E5457B216EDAE6003B79C5 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,7 @@
 				397B3CEB21659236003BAF0C /* LoginController.swift */,
 				398A9FD021698015007F97B9 /* SignupController.swift */,
 				39E5456D216ECEB9003B79C5 /* AboutController.swift */,
+				39E54578216ED9C4003B79C5 /* TutorialController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 		39A191E921600EF200D6786C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				39E5457A216EDADB003B79C5 /* Tutorial */,
 				39E54571216ED0D2003B79C5 /* About */,
 				398A9FCF21697FEB007F97B9 /* Signup */,
 				397B3CED21659328003BAF0C /* Login */,
@@ -279,6 +285,14 @@
 				39E54576216ED54F003B79C5 /* AboutBotModal.swift */,
 			);
 			path = About;
+			sourceTree = "<group>";
+		};
+		39E5457A216EDADB003B79C5 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				39E5457B216EDAE6003B79C5 /* Welcome.swift */,
+			);
+			path = Tutorial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,9 +450,11 @@
 				398A9FC821685DBF007F97B9 /* APIServices.swift in Sources */,
 				398A9FD121698015007F97B9 /* SignupController.swift in Sources */,
 				39BF216A21619C46005C64A7 /* LoginSignupController.swift in Sources */,
+				39E54579216ED9C4003B79C5 /* TutorialController.swift in Sources */,
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
 				39306E1D2160CB8C00AD3F26 /* C1.swift in Sources */,
 				397B3CEF21659335003BAF0C /* NativeLoginModal.swift in Sources */,
+				39E5457C216EDAE6003B79C5 /* Welcome.swift in Sources */,
 				397B3CE62165830A003BAF0C /* AccountButton.swift in Sources */,
 				398A9FCC21686456007F97B9 /* User.swift in Sources */,
 				39E5456E216ECEB9003B79C5 /* AboutController.swift in Sources */,

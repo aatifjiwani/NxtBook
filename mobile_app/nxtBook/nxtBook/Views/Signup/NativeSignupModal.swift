@@ -40,6 +40,15 @@ class NativeSignupModal: UIView {
         return button
     }()
     
+    //////
+    let tutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("tutorial", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Futura-Medium", size: 18)
+        return button
+    }()
+    
     let emailLabel: UILabel = {
         let label = UILabel()
         label.text = "email:"
@@ -141,6 +150,22 @@ class NativeSignupModal: UIView {
         signupButton.anchorCenterXToSuperview()
         signupButton.anchor(nil, left: nil, bottom: backgroundBox.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 20, rightConstant: 0, widthConstant: 100, heightConstant: 50)
         signupButton.addTarget(self, action: #selector(handleSignup), for: .touchUpInside)
+        
+        addSubview(tutButton)
+        tutButton.anchorCenterXToSuperview()
+        tutButton.anchor(backButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        tutButton.sizeToFit()
+        tutButton.addTarget(self, action: #selector(handleTut), for: .touchUpInside)
+    }
+    
+    @objc func handleTut() {
+        print("ww")
+        let viewController = TutorialController()
+        let transition = CATransition()
+        transition.type = kCATransitionFromBottom
+        if let window = UIApplication.shared.keyWindow {
+            window.set(rootViewController: viewController, withTransition: transition)
+        }
     }
     
     @objc func handleSignup() {
@@ -169,7 +194,6 @@ class NativeSignupModal: UIView {
         }
     
     @objc func handleBack() {
-        print("yo")
         controller?.handleBack()
     }
 }
