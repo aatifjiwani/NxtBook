@@ -38,6 +38,10 @@
 		39A191F82160273100D6786C /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F72160273100D6786C /* SearchField.swift */; };
 		39BF216A21619C46005C64A7 /* LoginSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BF216921619C46005C64A7 /* LoginSignupController.swift */; };
 		39BF216D2161A259005C64A7 /* WelcomeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BF216C2161A259005C64A7 /* WelcomeModal.swift */; };
+		39E5456E216ECEB9003B79C5 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5456D216ECEB9003B79C5 /* AboutController.swift */; };
+		39E54573216ED0EA003B79C5 /* AboutTopModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E54572216ED0EA003B79C5 /* AboutTopModal.swift */; };
+		39E54575216ED512003B79C5 /* GBBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E54574216ED512003B79C5 /* GBBackgroundView.swift */; };
+		39E54577216ED54F003B79C5 /* AboutBotModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E54576216ED54F003B79C5 /* AboutBotModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +99,10 @@
 		39A191F72160273100D6786C /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		39BF216921619C46005C64A7 /* LoginSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupController.swift; sourceTree = "<group>"; };
 		39BF216C2161A259005C64A7 /* WelcomeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModal.swift; sourceTree = "<group>"; };
+		39E5456D216ECEB9003B79C5 /* AboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
+		39E54572216ED0EA003B79C5 /* AboutTopModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTopModal.swift; sourceTree = "<group>"; };
+		39E54574216ED512003B79C5 /* GBBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBBackgroundView.swift; sourceTree = "<group>"; };
+		39E54576216ED54F003B79C5 /* AboutBotModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutBotModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +212,7 @@
 				39BF216921619C46005C64A7 /* LoginSignupController.swift */,
 				397B3CEB21659236003BAF0C /* LoginController.swift */,
 				398A9FD021698015007F97B9 /* SignupController.swift */,
+				39E5456D216ECEB9003B79C5 /* AboutController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +242,7 @@
 		39A191E921600EF200D6786C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				39E54571216ED0D2003B79C5 /* About */,
 				398A9FCF21697FEB007F97B9 /* Signup */,
 				397B3CED21659328003BAF0C /* Login */,
 				39BF216B21619D55005C64A7 /* LoginSignup */,
@@ -259,6 +269,16 @@
 				397B3CE921658FD0003BAF0C /* LoginModal.swift */,
 			);
 			path = LoginSignup;
+			sourceTree = "<group>";
+		};
+		39E54571216ED0D2003B79C5 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				39E54572216ED0EA003B79C5 /* AboutTopModal.swift */,
+				39E54574216ED512003B79C5 /* GBBackgroundView.swift */,
+				39E54576216ED54F003B79C5 /* AboutBotModal.swift */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,7 +416,9 @@
 				39BF216D2161A259005C64A7 /* WelcomeModal.swift in Sources */,
 				3967CE20216988FC00EA5476 /* UIWindowExtension.swift in Sources */,
 				398A9FCA21685E14007F97B9 /* Secrets.swift in Sources */,
+				39E54573216ED0EA003B79C5 /* AboutTopModal.swift in Sources */,
 				398A9FC62168579A007F97B9 /* CredentialField.swift in Sources */,
+				39E54575216ED512003B79C5 /* GBBackgroundView.swift in Sources */,
 				39A191F2216015B600D6786C /* UIViewExtension.swift in Sources */,
 				398A9FD3216980D2007F97B9 /* NativeSignupModal.swift in Sources */,
 				39A191F42160178700D6786C /* IndexButton.swift in Sources */,
@@ -407,6 +429,7 @@
 				397B3CF121659523003BAF0C /* BackgroundView.swift in Sources */,
 				398A9FCE216864E7007F97B9 /* UserDefaultsExtension.swift in Sources */,
 				397B3CE8216587EB003BAF0C /* SignupModal.swift in Sources */,
+				39E54577216ED54F003B79C5 /* AboutBotModal.swift in Sources */,
 				39A191F82160273100D6786C /* SearchField.swift in Sources */,
 				39A191EB21600EFF00D6786C /* IndexController.swift in Sources */,
 				397B3CEA21658FD0003BAF0C /* LoginModal.swift in Sources */,
@@ -418,6 +441,7 @@
 				397B3CEF21659335003BAF0C /* NativeLoginModal.swift in Sources */,
 				397B3CE62165830A003BAF0C /* AccountButton.swift in Sources */,
 				398A9FCC21686456007F97B9 /* User.swift in Sources */,
+				39E5456E216ECEB9003B79C5 /* AboutController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,6 +30,7 @@ class IndexController: UIViewController {
     
     var user: User? {
         didSet {
+            fullNameLabel.text = "\(user?.firstname?.capitalized) \(user?.lastname?.capitalized)" 
             print("user \((user?.username)!) has logged in")
         }
     }
@@ -104,8 +105,21 @@ class IndexController: UIViewController {
         return button
     }()
     
+    let fullNameLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = Colors.nxtOrange
+        label.text = "..."
+        label.font = UIFont(name: "Futura-Medium", size: 20)
+        return label
+    }()
+    
+    
     func checkUserLoggedIn() {
         if UserDefaults.standard.isLoggedIn() {
+            //TO REPLACE:
+            fullNameLabel.text = "Demo User"
+            
+
             setupViews()
             print("already logged in \(UserDefaults.standard.getUser())")
         } else {
@@ -128,6 +142,10 @@ class IndexController: UIViewController {
         logoutButton.sizeToFit()
         logoutButton.addTarget(self, action: #selector(handleLogout), for: .touchUpInside)
         
+        view.addSubview(fullNameLabel)
+        fullNameLabel.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, topConstant: 31, leftConstant: 30, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        fullNameLabel.sizeToFit()
+        
         view.addSubview(nxtLabel)
         nxtLabel.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, topConstant: 75, leftConstant: 55, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         nxtLabel.sizeToFit()
@@ -145,7 +163,6 @@ class IndexController: UIViewController {
         buyButton.anchorCenterXToSuperview()
         buyButton.anchor(titleBar.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 40, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 325, heightConstant: 70)
         buyButton.setGradientBackground(startColor: Colors.nxtLightOrange, endColor: Colors.nxtOrange, startX: 0.0, startY: 0.5, endX: 1.0, endY: 0.5)
-        buyButton.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
         
         view.addSubview(sellButton)
         sellButton.anchorCenterXToSuperview()
@@ -161,6 +178,7 @@ class IndexController: UIViewController {
         aboutButton.anchorCenterXToSuperview()
         aboutButton.anchor(profileButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 30, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 325, heightConstant: 70)
         aboutButton.setGradientBackground(startColor: Colors.nxtLightOrange, endColor: Colors.nxtOrange, startX: 0.0, startY: 0.5, endX: 1.0, endY: 0.5)
+        aboutButton.addTarget(self, action: #selector(handleAbout), for: .touchUpInside)
         
         
         view.addSubview(search)
@@ -171,6 +189,7 @@ class IndexController: UIViewController {
         searchLabel.anchorCenterXToSuperview()
         searchLabel.anchor(nil, left: nil, bottom: search.topAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 20, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         searchLabel.sizeToFit()
+        
         
     }
     
@@ -187,18 +206,14 @@ class IndexController: UIViewController {
         
     }
     
-    @objc func handleButton() {
-        let viewController = LoginSignupController()
+    @objc func handleAbout() {
+        let viewController = AboutController()
         viewController.indexController = self
         let transition = CATransition()
         transition.type = kCATransitionFromBottom
         if let window = UIApplication.shared.keyWindow {
             window.set(rootViewController: viewController, withTransition: transition)
         }
-//        print("yo")
-//        let control = LoginSignupController()
-//        control.indexController = self
-//        present(control, animated: true, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {
