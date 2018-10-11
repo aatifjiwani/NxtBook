@@ -44,6 +44,8 @@
 		39E54577216ED54F003B79C5 /* AboutBotModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E54576216ED54F003B79C5 /* AboutBotModal.swift */; };
 		39E54579216ED9C4003B79C5 /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E54578216ED9C4003B79C5 /* TutorialController.swift */; };
 		39E5457C216EDAE6003B79C5 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5457B216EDAE6003B79C5 /* Welcome.swift */; };
+		39E5457E216EDD4F003B79C5 /* BuyAndSell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5457D216EDD4F003B79C5 /* BuyAndSell.swift */; };
+		39E54580216EE188003B79C5 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5457F216EE188003B79C5 /* Search.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		39E54576216ED54F003B79C5 /* AboutBotModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutBotModal.swift; sourceTree = "<group>"; };
 		39E54578216ED9C4003B79C5 /* TutorialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
 		39E5457B216EDAE6003B79C5 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
+		39E5457D216EDD4F003B79C5 /* BuyAndSell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyAndSell.swift; sourceTree = "<group>"; };
+		39E5457F216EE188003B79C5 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				39E5457B216EDAE6003B79C5 /* Welcome.swift */,
+				39E5457D216EDD4F003B79C5 /* BuyAndSell.swift */,
+				39E5457F216EE188003B79C5 /* Search.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E54580216EE188003B79C5 /* Search.swift in Sources */,
 				39BF216D2161A259005C64A7 /* WelcomeModal.swift in Sources */,
 				3967CE20216988FC00EA5476 /* UIWindowExtension.swift in Sources */,
 				398A9FCA21685E14007F97B9 /* Secrets.swift in Sources */,
@@ -457,6 +464,7 @@
 				39E5457C216EDAE6003B79C5 /* Welcome.swift in Sources */,
 				397B3CE62165830A003BAF0C /* AccountButton.swift in Sources */,
 				398A9FCC21686456007F97B9 /* User.swift in Sources */,
+				39E5457E216EDD4F003B79C5 /* BuyAndSell.swift in Sources */,
 				39E5456E216ECEB9003B79C5 /* AboutController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

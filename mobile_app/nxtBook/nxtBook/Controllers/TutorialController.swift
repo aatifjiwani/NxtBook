@@ -16,10 +16,15 @@ class TutorialController: UIViewController {
     
     let welcomeModal = Welcome()
     
+    let buyAndSellModal = BuyAndSell()
+    
     func setupViews() {
         setupBackground()
-        view.addSubview(welcomeModal)
-        welcomeModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+//        view.addSubview(welcomeModal)
+//        welcomeModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        view.addSubview(buyAndSellModal)
+        buyAndSellModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
         view.isUserInteractionEnabled = true
         view.isMultipleTouchEnabled = true
