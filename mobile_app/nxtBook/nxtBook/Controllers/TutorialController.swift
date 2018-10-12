@@ -20,6 +20,8 @@ class TutorialController: UIViewController {
     
     let searchModal = Search()
     
+    let findBookModal = FindBook()
+    
     func setupViews() {
         setupBackground()
 //        view.addSubview(welcomeModal)
@@ -28,8 +30,11 @@ class TutorialController: UIViewController {
 //        view.addSubview(buyAndSellModal)
 //        buyAndSellModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
-        view.addSubview(searchModal)
-        searchModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+//        view.addSubview(searchModal)
+//        searchModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        view.addSubview(findBookModal)
+        findBookModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
         view.isUserInteractionEnabled = true
         view.isMultipleTouchEnabled = true
@@ -45,7 +50,7 @@ class TutorialController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        
+        findBookModal.bookView.buyBook.gradient.frame = findBookModal.bookView.buyBook.bounds
     }
     
     func setupBackground() {

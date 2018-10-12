@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3929BB0F2170498900792372 /* FindBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929BB0E2170498900792372 /* FindBook.swift */; };
+		3929BB1221704B9900792372 /* ShowBookModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929BB1121704B9900792372 /* ShowBookModal.swift */; };
+		3929BB1421704BEB00792372 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929BB1321704BEB00792372 /* Book.swift */; };
+		3929BB162170511000792372 /* ConditionStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929BB152170511000792372 /* ConditionStars.swift */; };
+		3929BB182170564900792372 /* BuyBookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929BB172170564900792372 /* BuyBookButton.swift */; };
 		39306E1D2160CB8C00AD3F26 /* C1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39306E1C2160CB8C00AD3F26 /* C1.swift */; };
 		39306E1F2160CBCD00AD3F26 /* C2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39306E1E2160CBCD00AD3F26 /* C2.swift */; };
 		3967CE20216988FC00EA5476 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */; };
@@ -66,6 +71,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3929BB0E2170498900792372 /* FindBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindBook.swift; sourceTree = "<group>"; };
+		3929BB1121704B9900792372 /* ShowBookModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBookModal.swift; sourceTree = "<group>"; };
+		3929BB1321704BEB00792372 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		3929BB152170511000792372 /* ConditionStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionStars.swift; sourceTree = "<group>"; };
+		3929BB172170564900792372 /* BuyBookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyBookButton.swift; sourceTree = "<group>"; };
 		39306E1C2160CB8C00AD3F26 /* C1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C1.swift; sourceTree = "<group>"; };
 		39306E1E2160CBCD00AD3F26 /* C2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2.swift; sourceTree = "<group>"; };
 		3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
@@ -138,6 +148,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3929BB1021704B8700792372 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				3929BB1121704B9900792372 /* ShowBookModal.swift */,
+				3929BB152170511000792372 /* ConditionStars.swift */,
+				3929BB172170564900792372 /* BuyBookButton.swift */,
+			);
+			path = Books;
+			sourceTree = "<group>";
+		};
 		397B3CED21659328003BAF0C /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				398A9FCB21686456007F97B9 /* User.swift */,
+				3929BB1321704BEB00792372 /* Book.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,6 +272,7 @@
 		39A191E921600EF200D6786C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3929BB1021704B8700792372 /* Books */,
 				39E5457A216EDADB003B79C5 /* Tutorial */,
 				39E54571216ED0D2003B79C5 /* About */,
 				398A9FCF21697FEB007F97B9 /* Signup */,
@@ -297,6 +319,7 @@
 				39E5457B216EDAE6003B79C5 /* Welcome.swift */,
 				39E5457D216EDD4F003B79C5 /* BuyAndSell.swift */,
 				39E5457F216EE188003B79C5 /* Search.swift */,
+				3929BB0E2170498900792372 /* FindBook.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -453,16 +476,21 @@
 				39E54577216ED54F003B79C5 /* AboutBotModal.swift in Sources */,
 				39A191F82160273100D6786C /* SearchField.swift in Sources */,
 				39A191EB21600EFF00D6786C /* IndexController.swift in Sources */,
+				3929BB1221704B9900792372 /* ShowBookModal.swift in Sources */,
 				397B3CEA21658FD0003BAF0C /* LoginModal.swift in Sources */,
 				398A9FC821685DBF007F97B9 /* APIServices.swift in Sources */,
 				398A9FD121698015007F97B9 /* SignupController.swift in Sources */,
 				39BF216A21619C46005C64A7 /* LoginSignupController.swift in Sources */,
 				39E54579216ED9C4003B79C5 /* TutorialController.swift in Sources */,
+				3929BB0F2170498900792372 /* FindBook.swift in Sources */,
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
 				39306E1D2160CB8C00AD3F26 /* C1.swift in Sources */,
 				397B3CEF21659335003BAF0C /* NativeLoginModal.swift in Sources */,
 				39E5457C216EDAE6003B79C5 /* Welcome.swift in Sources */,
 				397B3CE62165830A003BAF0C /* AccountButton.swift in Sources */,
+				3929BB1421704BEB00792372 /* Book.swift in Sources */,
+				3929BB182170564900792372 /* BuyBookButton.swift in Sources */,
+				3929BB162170511000792372 /* ConditionStars.swift in Sources */,
 				398A9FCC21686456007F97B9 /* User.swift in Sources */,
 				39E5457E216EDD4F003B79C5 /* BuyAndSell.swift in Sources */,
 				39E5456E216ECEB9003B79C5 /* AboutController.swift in Sources */,
