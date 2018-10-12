@@ -22,6 +22,8 @@ class TutorialController: UIViewController {
     
     let findBookModal = FindBook()
     
+    let chatModal = ChatToBuy()
+    
     func setupViews() {
         setupBackground()
 //        view.addSubview(welcomeModal)
@@ -33,8 +35,11 @@ class TutorialController: UIViewController {
 //        view.addSubview(searchModal)
 //        searchModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
-        view.addSubview(findBookModal)
-        findBookModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+//        view.addSubview(findBookModal)
+//        findBookModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+
+        view.addSubview(chatModal)
+        chatModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
         view.isUserInteractionEnabled = true
         view.isMultipleTouchEnabled = true

@@ -16,4 +16,6 @@ class Colors {
     
     static let nxtLightOrange = UIColor(red: 255/255, green: 195/255, blue: 68/255, alpha: 1)
     
+    static let messageBlue = UIColor(red: 0/255, green: 170/255, blue: 255/255, alpha: 1)
+    static let messageGray = UIColor(red: 221/255, green: 221/255, blue: 221/255, alpha: 1)
 }
