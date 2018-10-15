@@ -17,6 +17,12 @@ class TutorialController: UIViewController {
     
     var canContinue: Bool = true
     
+    var toUser: User? {
+        didSet {
+            welcomeModal.changeWelcomeString(first: (toUser?.firstname)!)
+        }
+    }
+    
     let welcomeModal = Welcome()
     
     let buyAndSellModal = BuyAndSell()
@@ -26,6 +32,10 @@ class TutorialController: UIViewController {
     let findBookModal = FindBook()
     
     let chatModal = ChatToBuy()
+    
+    let completeModal = MarkAsComplete()
+    
+    let sellModal = SellABook()
     
     let tapToContinue: UIView = {
         let view = UIView()
@@ -74,11 +84,11 @@ class TutorialController: UIViewController {
         view.addSubview(buyAndSellModal)
         buyAndSellModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         buyAndSellModal.alpha = 0
-        
+
         view.addSubview(searchModal)
         searchModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         searchModal.alpha = 0
-        
+
         view.addSubview(findBookModal)
         findBookModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         findBookModal.alpha = 0
@@ -87,14 +97,20 @@ class TutorialController: UIViewController {
         chatModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         chatModal.alpha = 0
         
+        view.addSubview(completeModal)
+        completeModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        completeModal.alpha = 0
+        
+        view.addSubview(sellModal)
+        sellModal.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        sellModal.alpha = 0
+        
         view.isUserInteractionEnabled = true
         view.isMultipleTouchEnabled = true
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleContinueTut))
         view.addGestureRecognizer(gesture)
     }
-    
-    var user: User?
     
     @objc func handleContinueTut() {
         print("whoa")
@@ -106,6 +122,13 @@ class TutorialController: UIViewController {
         guard currIndex != (tutorialModals?.count)! - 1 else {
             //do stuff
             print("go to indexController")
+            let viewController = IndexController()
+            viewController.user = toUser
+            let transition = CATransition()
+            transition.type = kCATransitionFromBottom
+            if let window = UIApplication.shared.keyWindow {
+                window.set(rootViewController: viewController, withTransition: transition)
+            }
             return
         }
         
@@ -138,6 +161,8 @@ class TutorialController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         findBookModal.bookView.buyBook.gradient.frame = findBookModal.bookView.buyBook.bounds
+        completeModal.yesButton.gradient.frame = completeModal.yesButton.bounds
+        completeModal.noButton.gradient.frame = completeModal.noButton.bounds
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -149,7 +174,7 @@ class TutorialController: UIViewController {
         }) { (bool) in
             self.tapToContinue.alpha = 1
             self.canContinue = true
-            self.tutorialModals = [self.welcomeModal, self.buyAndSellModal, self.searchModal, self.findBookModal, self.chatModal]
+            self.tutorialModals = [self.welcomeModal, self.buyAndSellModal, self.searchModal, self.findBookModal, self.chatModal, self.completeModal, self.sellModal]
         }
     }
     

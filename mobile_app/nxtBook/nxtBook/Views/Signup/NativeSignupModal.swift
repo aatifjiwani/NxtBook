@@ -151,11 +151,11 @@ class NativeSignupModal: UIView {
         signupButton.anchor(nil, left: nil, bottom: backgroundBox.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 20, rightConstant: 0, widthConstant: 100, heightConstant: 50)
         signupButton.addTarget(self, action: #selector(handleSignup), for: .touchUpInside)
         
-        addSubview(tutButton)
-        tutButton.anchorCenterXToSuperview()
-        tutButton.anchor(backButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        tutButton.sizeToFit()
-        tutButton.addTarget(self, action: #selector(handleTut), for: .touchUpInside)
+//        addSubview(tutButton)
+//        tutButton.anchorCenterXToSuperview()
+//        tutButton.anchor(backButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+//        tutButton.sizeToFit()
+//        tutButton.addTarget(self, action: #selector(handleTut), for: .touchUpInside)
     }
     
     @objc func handleTut() {
@@ -176,12 +176,14 @@ class NativeSignupModal: UIView {
         APIServices.signupUser(lastname: last, email: email, password: password, firstname: first) { (response, status) in
             if status == 200 {
                 print(response!)
-                let user = User(json: response!)
+                let newUser = User(json: response!)
                 UserDefaults.standard.setIsLoggedIn(value: true)
-                UserDefaults.standard.setUser(value: user.id!)
+                UserDefaults.standard.setUser(value: newUser.id!)
 
-                let viewController = IndexController()
-                viewController.user = user
+//                let viewController = IndexController()
+//                viewController.user = user
+                let viewController = TutorialController()
+                viewController.toUser = newUser
                 let transition = CATransition()
                 transition.type = kCATransitionFromBottom
                 if let window = UIApplication.shared.keyWindow {

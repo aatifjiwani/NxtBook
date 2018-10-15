@@ -16,6 +16,8 @@
 		3929BB1C21705D7700792372 /* TutorialChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929BB1B21705D7700792372 /* TutorialChatBubble.swift */; };
 		39306E1D2160CB8C00AD3F26 /* C1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39306E1C2160CB8C00AD3F26 /* C1.swift */; };
 		39306E1F2160CBCD00AD3F26 /* C2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39306E1E2160CBCD00AD3F26 /* C2.swift */; };
+		39381D6F21751F740094ACB0 /* MarkAsComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39381D6E21751F740094ACB0 /* MarkAsComplete.swift */; };
+		39381D712175296C0094ACB0 /* SellABook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39381D702175296C0094ACB0 /* SellABook.swift */; };
 		3967CE20216988FC00EA5476 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */; };
 		397B3CE62165830A003BAF0C /* AccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CE52165830A003BAF0C /* AccountButton.swift */; };
 		397B3CE8216587EB003BAF0C /* SignupModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CE7216587EB003BAF0C /* SignupModal.swift */; };
@@ -82,6 +84,8 @@
 		3929BB1B21705D7700792372 /* TutorialChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialChatBubble.swift; sourceTree = "<group>"; };
 		39306E1C2160CB8C00AD3F26 /* C1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C1.swift; sourceTree = "<group>"; };
 		39306E1E2160CBCD00AD3F26 /* C2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2.swift; sourceTree = "<group>"; };
+		39381D6E21751F740094ACB0 /* MarkAsComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkAsComplete.swift; sourceTree = "<group>"; };
+		39381D702175296C0094ACB0 /* SellABook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellABook.swift; sourceTree = "<group>"; };
 		3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		397B3CE52165830A003BAF0C /* AccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountButton.swift; sourceTree = "<group>"; };
 		397B3CE7216587EB003BAF0C /* SignupModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModal.swift; sourceTree = "<group>"; };
@@ -326,6 +330,8 @@
 				3929BB0E2170498900792372 /* FindBook.swift */,
 				3929BB192170592200792372 /* ChatToBuy.swift */,
 				3929BB1B21705D7700792372 /* TutorialChatBubble.swift */,
+				39381D6E21751F740094ACB0 /* MarkAsComplete.swift */,
+				39381D702175296C0094ACB0 /* SellABook.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -478,6 +484,7 @@
 				39A191F02160140300D6786C /* Colors.swift in Sources */,
 				39A191F621601BE500D6786C /* UIButtonExtension.swift in Sources */,
 				397B3CF121659523003BAF0C /* BackgroundView.swift in Sources */,
+				39381D712175296C0094ACB0 /* SellABook.swift in Sources */,
 				398A9FCE216864E7007F97B9 /* UserDefaultsExtension.swift in Sources */,
 				397B3CE8216587EB003BAF0C /* SignupModal.swift in Sources */,
 				39E54577216ED54F003B79C5 /* AboutBotModal.swift in Sources */,
@@ -493,6 +500,7 @@
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
 				3929BB1A2170592200792372 /* ChatToBuy.swift in Sources */,
 				39306E1D2160CB8C00AD3F26 /* C1.swift in Sources */,
+				39381D6F21751F740094ACB0 /* MarkAsComplete.swift in Sources */,
 				397B3CEF21659335003BAF0C /* NativeLoginModal.swift in Sources */,
 				39E5457C216EDAE6003B79C5 /* Welcome.swift in Sources */,
 				397B3CE62165830A003BAF0C /* AccountButton.swift in Sources */,

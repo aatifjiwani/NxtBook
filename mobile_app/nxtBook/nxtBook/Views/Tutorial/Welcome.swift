@@ -31,6 +31,10 @@ class Welcome: UIView {
     }()
     
     
+    func changeWelcomeString(first: String) {
+        welcomeLabel.text = "welcome to nxtBook, \(first)!"
+    }
+    
     func setupViews() {
         let welcomeString = "welcome to nxtBook, \(firstName)!"
         welcomeLabel.text = welcomeString

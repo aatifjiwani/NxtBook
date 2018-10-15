@@ -30,8 +30,10 @@ class IndexController: UIViewController {
     
     var user: User? {
         didSet {
-            fullNameLabel.text = "\(user?.firstname?.capitalized) \(user?.lastname?.capitalized)" 
-            print("user \((user?.username)!) has logged in")
+            if let first = user?.firstname, let last = user?.lastname {
+                fullNameLabel.text = "\(first.capitalized) \(last.capitalized)"
+                print("user \(first) has logged in")
+            }
         }
     }
     
@@ -117,9 +119,6 @@ class IndexController: UIViewController {
     func checkUserLoggedIn() {
         if UserDefaults.standard.isLoggedIn() {
             //TO REPLACE:
-            fullNameLabel.text = "Demo User"
-            
-
             setupViews()
             print("already logged in \(UserDefaults.standard.getUser())")
         } else {
