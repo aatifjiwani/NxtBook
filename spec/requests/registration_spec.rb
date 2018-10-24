@@ -7,7 +7,6 @@ RSpec.describe 'POST /signup', type: :request do
     {
       token: token,
       user: {
-        username: 'demouser',
         firstname: 'demo',
         lastname: 'user',
         email: 'user@example.com',
@@ -42,6 +41,25 @@ RSpec.describe 'POST /signup', type: :request do
     it 'returns validation errors for email' do
       error = JSON.parse(response.body)["errors"][0]["detail"]
       expect(error["email"][0]).to eq("has already been taken")
+    end
+  end
+  
+  context 'when user with same username exists' do    
+    it 'creates a numbered username' do
+      create(:user, firstname: "first", lastname: "user")
+      
+      post url, params: {
+        token: token,
+          user: {
+            firstname: 'First',
+            lastname: 'User',
+            email: 'demo@anotheremail.com',
+            password: 'password'
+          }
+        }
+      expect(User.first.username).to eq("firstuser")
+      new_user = User.last
+      expect(new_user.username).to eq("firstuser1")
     end
   end
 end
