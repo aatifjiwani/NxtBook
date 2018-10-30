@@ -14,14 +14,14 @@ class IndexController: UIViewController {
         view.backgroundColor = UIColor.red
         navigationController?.navigationBar.isHidden = true
         
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
+//        for family: String in UIFont.familyNames
+//        {
+//            print("\(family)")
+//            for names: String in UIFont.fontNames(forFamilyName: family)
+//            {
+//                print("== \(names)")
+//            }
+//        }
         
         
         checkUserLoggedIn()
@@ -120,7 +120,14 @@ class IndexController: UIViewController {
         if UserDefaults.standard.isLoggedIn() {
             //TO REPLACE:
             setupViews()
-            print("already logged in \(UserDefaults.standard.getUser())")
+            APIServices.getUser(id: UserDefaults.standard.getUser()) { (response, status) in
+                if (status == 200) {
+                    let newUser = User(json: response!)
+                    self.user = newUser
+                } else {
+                    print("error occurred trying to get user")
+                }
+            }
         } else {
             let viewController = LoginSignupController()
             viewController.indexController = self
@@ -172,6 +179,7 @@ class IndexController: UIViewController {
         profileButton.anchorCenterXToSuperview()
         profileButton.anchor(sellButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 30, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 325, heightConstant: 70)
         profileButton.setGradientBackground(startColor: Colors.nxtLightOrange, endColor: Colors.nxtOrange, startX: 0.0, startY: 0.5, endX: 1.0, endY: 0.5)
+        profileButton.addTarget(self, action: #selector(handleProfile), for: .touchUpInside)
         
         view.addSubview(aboutButton)
         aboutButton.anchorCenterXToSuperview()
@@ -213,6 +221,26 @@ class IndexController: UIViewController {
         if let window = UIApplication.shared.keyWindow {
             window.set(rootViewController: viewController, withTransition: transition)
         }
+    }
+    
+    @objc func handleProfile() {
+        let viewController = ProfileController()
+        viewController.indexController = self
+        viewController.user = self.user
+        
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionFade
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        
+        present(viewController, animated: false)
+        
+//        let transition = CATransition()
+//        transition.type = kCATransitionFromBottom
+//        if let window = UIApplication.shared.keyWindow {
+//            window.set(rootViewController: viewController, withTransition: transition)
+//        }
     }
     
     override func viewDidLayoutSubviews() {

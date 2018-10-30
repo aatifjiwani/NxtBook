@@ -113,15 +113,12 @@ class TutorialController: UIViewController {
     }
     
     @objc func handleContinueTut() {
-        print("whoa")
-        
         guard canContinue && tutorialModals != nil else {
             return
         }
         
         guard currIndex != (tutorialModals?.count)! - 1 else {
             //do stuff
-            print("go to indexController")
             let viewController = IndexController()
             viewController.user = toUser
             let transition = CATransition()
@@ -166,7 +163,6 @@ class TutorialController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("Appeared")
         tapToContinue.alpha = 0
         canContinue = false
         UIView.animate(withDuration: 0.5, delay: 1, options: .curveEaseOut, animations: {
