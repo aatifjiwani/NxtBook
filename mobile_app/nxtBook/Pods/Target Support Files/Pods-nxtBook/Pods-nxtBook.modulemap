@@ -1,0 +1,6 @@
+framework module Pods_nxtBook {
+  umbrella header "Pods-nxtBook-umbrella.h"
+
+  export *
+  module * { export * }
+}

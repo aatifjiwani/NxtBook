@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EditProfileController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     override func viewDidLoad() {
@@ -179,7 +180,32 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
             selectedImage = originalImage
         }
         
+        if let toUploadImage = selectedImage {
+            handleUploadImageToFirebase(image: toUploadImage)
+        }
+        
         dismiss(animated: true, completion: nil)
+    }
+    
+    func handleUploadImageToFirebase(image: UIImage) {
+        let imageName = NSUUID().uuidString
+        let storage = Storage.storage().reference().child("\(user?.username ?? "username")\(imageName).jpg")
+        if let data = UIImageJPEGRepresentation(image, 0.2) {
+            storage.putData(data, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    print(error!)
+                }
+                
+                storage.downloadURL(completion: { (url, error) in
+                    if let downURL = url?.absoluteString {
+                        print(downURL)
+                        //completion(downURL)
+                    } else {
+                        //completion("")
+                    }
+                })
+            }
+        }
     }
     
     func changeWithLibrary() {
