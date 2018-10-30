@@ -11,7 +11,7 @@ Rails.application.routes.draw do
                registrations: 'registrations'
              }
   
-  resources :users, only: [:show]
+  resources :users, only: [:show, :update]
   
   resources :sold_books, except: [:edit, :new]
   resources :bought_books, only: [:create, :index, :show]
