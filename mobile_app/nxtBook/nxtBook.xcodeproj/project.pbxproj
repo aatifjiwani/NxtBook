@@ -14,6 +14,8 @@
 		3929BB182170564900792372 /* BuyBookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929BB172170564900792372 /* BuyBookButton.swift */; };
 		3929BB1A2170592200792372 /* ChatToBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929BB192170592200792372 /* ChatToBuy.swift */; };
 		3929BB1C21705D7700792372 /* TutorialChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929BB1B21705D7700792372 /* TutorialChatBubble.swift */; };
+		392B5746219B9FF700F1325B /* SellBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B5745219B9FF700F1325B /* SellBookController.swift */; };
+		392B5748219BA3E600F1325B /* SellBookModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B5747219BA3E600F1325B /* SellBookModal.swift */; };
 		39381D6F21751F740094ACB0 /* MarkAsComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39381D6E21751F740094ACB0 /* MarkAsComplete.swift */; };
 		39381D712175296C0094ACB0 /* SellABook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39381D702175296C0094ACB0 /* SellABook.swift */; };
 		3967CE20216988FC00EA5476 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */; };
@@ -45,8 +47,10 @@
 		39A191F42160178700D6786C /* IndexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F32160178700D6786C /* IndexButton.swift */; };
 		39A191F621601BE500D6786C /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F521601BE500D6786C /* UIButtonExtension.swift */; };
 		39A191F82160273100D6786C /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191F72160273100D6786C /* SearchField.swift */; };
+		39AC8B44218C2AD500D163E0 /* ChangePasswordModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AC8B43218C2AD500D163E0 /* ChangePasswordModal.swift */; };
 		39BF216A21619C46005C64A7 /* LoginSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BF216921619C46005C64A7 /* LoginSignupController.swift */; };
 		39BF216D2161A259005C64A7 /* WelcomeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BF216C2161A259005C64A7 /* WelcomeModal.swift */; };
+		39D5A17F21881B8F0043EB67 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D5A17E21881B8F0043EB67 /* UIImageViewExtension.swift */; };
 		39E5456E216ECEB9003B79C5 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5456D216ECEB9003B79C5 /* AboutController.swift */; };
 		39E54573216ED0EA003B79C5 /* AboutTopModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E54572216ED0EA003B79C5 /* AboutTopModal.swift */; };
 		39E54575216ED512003B79C5 /* GBBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E54574216ED512003B79C5 /* GBBackgroundView.swift */; };
@@ -91,6 +95,8 @@
 		3929BB172170564900792372 /* BuyBookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyBookButton.swift; sourceTree = "<group>"; };
 		3929BB192170592200792372 /* ChatToBuy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatToBuy.swift; sourceTree = "<group>"; };
 		3929BB1B21705D7700792372 /* TutorialChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialChatBubble.swift; sourceTree = "<group>"; };
+		392B5745219B9FF700F1325B /* SellBookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellBookController.swift; sourceTree = "<group>"; };
+		392B5747219BA3E600F1325B /* SellBookModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellBookModal.swift; sourceTree = "<group>"; };
 		39381D6E21751F740094ACB0 /* MarkAsComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkAsComplete.swift; sourceTree = "<group>"; };
 		39381D702175296C0094ACB0 /* SellABook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellABook.swift; sourceTree = "<group>"; };
 		3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
@@ -128,8 +134,10 @@
 		39A191F32160178700D6786C /* IndexButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexButton.swift; sourceTree = "<group>"; };
 		39A191F521601BE500D6786C /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		39A191F72160273100D6786C /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		39AC8B43218C2AD500D163E0 /* ChangePasswordModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModal.swift; sourceTree = "<group>"; };
 		39BF216921619C46005C64A7 /* LoginSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupController.swift; sourceTree = "<group>"; };
 		39BF216C2161A259005C64A7 /* WelcomeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModal.swift; sourceTree = "<group>"; };
+		39D5A17E21881B8F0043EB67 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		39E5456D216ECEB9003B79C5 /* AboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
 		39E54572216ED0EA003B79C5 /* AboutTopModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTopModal.swift; sourceTree = "<group>"; };
 		39E54574216ED512003B79C5 /* GBBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBBackgroundView.swift; sourceTree = "<group>"; };
@@ -183,6 +191,7 @@
 				3929BB1121704B9900792372 /* ShowBookModal.swift */,
 				3929BB152170511000792372 /* ConditionStars.swift */,
 				3929BB172170564900792372 /* BuyBookButton.swift */,
+				392B5747219BA3E600F1325B /* SellBookModal.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -274,6 +283,7 @@
 				39E54578216ED9C4003B79C5 /* TutorialController.swift */,
 				39F6A54C21801FA700B48EE8 /* ProfileController.swift */,
 				399807EA2187FEE1001607E7 /* EditProfileController.swift */,
+				392B5745219B9FF700F1325B /* SellBookController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,6 +307,7 @@
 				398A9FC921685E14007F97B9 /* Secrets.swift */,
 				398A9FCD216864E7007F97B9 /* UserDefaultsExtension.swift */,
 				3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */,
+				39D5A17E21881B8F0043EB67 /* UIImageViewExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -366,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				39F6A54F218029F400B48EE8 /* BookCollection.swift */,
+				39AC8B43218C2AD500D163E0 /* ChangePasswordModal.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -622,8 +634,10 @@
 				3967CE20216988FC00EA5476 /* UIWindowExtension.swift in Sources */,
 				3929BB1C21705D7700792372 /* TutorialChatBubble.swift in Sources */,
 				398A9FCA21685E14007F97B9 /* Secrets.swift in Sources */,
+				39D5A17F21881B8F0043EB67 /* UIImageViewExtension.swift in Sources */,
 				39E54573216ED0EA003B79C5 /* AboutTopModal.swift in Sources */,
 				398A9FC62168579A007F97B9 /* CredentialField.swift in Sources */,
+				392B5746219B9FF700F1325B /* SellBookController.swift in Sources */,
 				39E54575216ED512003B79C5 /* GBBackgroundView.swift in Sources */,
 				39A191F2216015B600D6786C /* UIViewExtension.swift in Sources */,
 				398A9FD3216980D2007F97B9 /* NativeSignupModal.swift in Sources */,
@@ -648,10 +662,12 @@
 				39F6A55321802B1000B48EE8 /* PicBookCell.swift in Sources */,
 				39E54579216ED9C4003B79C5 /* TutorialController.swift in Sources */,
 				3929BB0F2170498900792372 /* FindBook.swift in Sources */,
+				39AC8B44218C2AD500D163E0 /* ChangePasswordModal.swift in Sources */,
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
 				3929BB1A2170592200792372 /* ChatToBuy.swift in Sources */,
 				39381D6F21751F740094ACB0 /* MarkAsComplete.swift in Sources */,
 				397B3CEF21659335003BAF0C /* NativeLoginModal.swift in Sources */,
+				392B5748219BA3E600F1325B /* SellBookModal.swift in Sources */,
 				39E5457C216EDAE6003B79C5 /* Welcome.swift in Sources */,
 				397B3CE62165830A003BAF0C /* AccountButton.swift in Sources */,
 				399807EB2187FEE1001607E7 /* EditProfileController.swift in Sources */,

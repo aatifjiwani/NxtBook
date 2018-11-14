@@ -20,8 +20,16 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     var user: User? {
         didSet {
             firstname.text = user?.firstname
+            
+            if let url = user?.profilePicture {
+                if !url.isEmpty {
+                    profileImageView.loadImagesUsingCacheWithURLString(url: url)
+                }
+            }
         }
     }
+    
+    var previousController: ProfileController?
     
     let editProfileLabel: UILabel = {
         let label = UILabel()
@@ -103,6 +111,10 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
     
     let alertController = UIAlertController(title: "Choose method", message: "How would you like to upload your picture?", preferredStyle: .actionSheet)
     
+    var partialWhiteBackground: UIView?
+    
+    var changePasswordView : ChangePasswordModal?
+    
     func setupViews() {
         setupBackground()
         
@@ -153,6 +165,10 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
         changePassBackground.addSubview(changePassword)
         changePassword.anchorCenterSuperview()
         changePassword.sizeToFit()
+        changePassword.isUserInteractionEnabled = true
+        
+        let gesture1 = UITapGestureRecognizer(target: self, action: #selector(handleChangePasswordView))
+        changePassword.addGestureRecognizer(gesture1)
         
         view.addSubview(creditCardBackground)
         creditCardBackground.anchor(changePassBackground.bottomAnchor, left: nil, bottom: nil, right: view.centerXAnchor, topConstant: 25, leftConstant: 0, bottomConstant: 0, rightConstant: 10, widthConstant: 175, heightConstant: 60)
@@ -167,6 +183,36 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
         venmo.anchorCenterSuperview()
         venmo.sizeToFit()
         
+    }
+    
+    @objc func handleChangePasswordView() {
+        changePasswordView = ChangePasswordModal()
+        changePasswordView?.alpha = 0
+        changePasswordView?.cancelButton.addTarget(self, action: #selector(handleCancelChangePassword), for: .touchUpInside)
+        
+        if let window = UIApplication.shared.keyWindow {
+            partialWhiteBackground = UIView(frame: window.frame)
+            partialWhiteBackground?.backgroundColor = UIColor.white
+            partialWhiteBackground?.alpha = 0
+            window.addSubview(partialWhiteBackground!)
+            window.addSubview(changePasswordView!)
+            changePasswordView?.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 370, heightConstant: 360)
+            changePasswordView?.anchorCenterSuperview()
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                self.changePasswordView?.alpha = 1
+                self.partialWhiteBackground?.alpha = 0.7
+            }, completion: nil)
+        }
+    }
+    
+    @objc func handleCancelChangePassword() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            self.changePasswordView?.alpha = 0
+            self.partialWhiteBackground?.alpha = 0
+        }, completion: { (completed) in
+            self.changePasswordView?.removeFromSuperview()
+            self.partialWhiteBackground?.removeFromSuperview()
+        })
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -187,6 +233,21 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
         dismiss(animated: true, completion: nil)
     }
     
+    func handleChangeProfileURLForUser(url: String, image: UIImage) {
+        APIServices.changeUserProfilePicture(id: UserDefaults.standard.getUser(), profileURL: url) { (response, status) in
+            if (status == 200) {
+                print("upload successful")
+                self.user?.profilePicture = url
+                UIImageView.addImageToCache(url: url, image: image)
+                self.profileImageView.loadImagesUsingCacheWithURLString(url: url)
+                
+                if self.previousController != nil {
+                    self.previousController?.profileImageView.loadImagesUsingCacheWithURLString(url: url)
+                }
+            }
+        }
+    }
+    
     func handleUploadImageToFirebase(image: UIImage) {
         let imageName = NSUUID().uuidString
         let storage = Storage.storage().reference().child("\(user?.username ?? "username")\(imageName).jpg")
@@ -199,11 +260,18 @@ class EditProfileController: UIViewController, UIImagePickerControllerDelegate, 
                 storage.downloadURL(completion: { (url, error) in
                     if let downURL = url?.absoluteString {
                         print(downURL)
+                        self.handleChangeProfileURLForUser(url: downURL, image: image)
                         //completion(downURL)
                     } else {
                         //completion("")
                     }
                 })
+            }
+        }
+        
+        if let previousURL = user?.profilePicture {
+            if !previousURL.isEmpty {
+                //DO SOMETHING HERE
             }
         }
     }

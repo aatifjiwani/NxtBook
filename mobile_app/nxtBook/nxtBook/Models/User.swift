@@ -15,6 +15,7 @@ class User: NSObject {
     var username: String?
     var firstname: String?
     var lastname: String?
+    var profilePicture: String?
     
     init(json: [String: Any]) {
         self.email = json["email"] as? String
@@ -22,5 +23,6 @@ class User: NSObject {
         self.username = json["username"] as? String
         self.firstname = json["firstname"] as? String
         self.lastname = json["lastname"] as? String
+        self.profilePicture = json["profilepicture"] as? String
     }
 }

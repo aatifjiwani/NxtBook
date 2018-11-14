@@ -19,6 +19,12 @@ class ProfileController: UIViewController {
     var user: User? {
         didSet {
             firstname.text = user?.firstname
+            
+            if let url = user?.profilePicture {
+                if !url.isEmpty {
+                    profileImageView.loadImagesUsingCacheWithURLString(url: url)
+                }
+            }
         }
     }
     
@@ -206,6 +212,7 @@ class ProfileController: UIViewController {
         let viewController = EditProfileController()
         viewController.indexController = indexController
         viewController.user = self.user
+        viewController.previousController = self
         
         let transition = CATransition()
         transition.duration = 0.5

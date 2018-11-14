@@ -122,6 +122,7 @@ class IndexController: UIViewController {
             setupViews()
             APIServices.getUser(id: UserDefaults.standard.getUser()) { (response, status) in
                 if (status == 200) {
+                    print(response!)
                     let newUser = User(json: response!)
                     self.user = newUser
                 } else {
@@ -169,11 +170,13 @@ class IndexController: UIViewController {
         buyButton.anchorCenterXToSuperview()
         buyButton.anchor(titleBar.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 40, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 325, heightConstant: 70)
         buyButton.setGradientBackground(startColor: Colors.nxtLightOrange, endColor: Colors.nxtOrange, startX: 0.0, startY: 0.5, endX: 1.0, endY: 0.5)
+        buyButton.addTarget(self, action: #selector(handleBuyBooks), for: .touchUpInside)
         
         view.addSubview(sellButton)
         sellButton.anchorCenterXToSuperview()
         sellButton.anchor(buyButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 30, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 325, heightConstant: 70)
         sellButton.setGradientBackground(startColor: Colors.nxtLightOrange, endColor: Colors.nxtOrange, startX: 0.0, startY: 0.5, endX: 1.0, endY: 0.5)
+        sellButton.addTarget(self, action: #selector(handleSellBooks), for: .touchUpInside)
         
         view.addSubview(profileButton)
         profileButton.anchorCenterXToSuperview()
@@ -241,6 +244,34 @@ class IndexController: UIViewController {
 //        if let window = UIApplication.shared.keyWindow {
 //            window.set(rootViewController: viewController, withTransition: transition)
 //        }
+    }
+    
+    @objc func handleBuyBooks() {
+//        let viewController = ProfileController()
+//        viewController.indexController = self
+//        viewController.user = self.user
+//
+//        let transition = CATransition()
+//        transition.duration = 0.5
+//        transition.type = kCATransitionFade
+//        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+//        view.window!.layer.add(transition, forKey: kCATransition)
+//
+//        present(viewController, animated: false)
+    }
+    
+    @objc func handleSellBooks() {
+        let viewController = SellBookController()
+        viewController.indexController = self
+        viewController.user = self.user
+        
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionFade
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        
+        present(viewController, animated: false)
     }
     
     override func viewDidLayoutSubviews() {

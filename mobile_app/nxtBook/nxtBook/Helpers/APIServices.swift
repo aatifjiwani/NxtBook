@@ -48,6 +48,33 @@ class APIServices {
         
     }
     
+    static func getImageFromURL(url: URL, completion: @escaping (Data) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if error != nil{
+                print("Getting Error -> \(error!)")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                if let unwrappedData = data {
+                    completion(unwrappedData)
+                }
+            }
+            }.resume()
+    }
+    
+    static func changeUserProfilePicture(id: Int, profileURL: String, completion: @escaping ([String:Any]?, Int) -> ()) {
+        let url = URL(string: "\(baseURL)/users/\(id)?token=\(Secrets.appKey)")!
+        let json: [String: Any] = [
+            "user": [
+                "profilepicture": profileURL.trimmingCharacters(in: .whitespacesAndNewlines)
+            ]]
+        
+        makeAPICallWithResponse(url: url, method: "PUT", dict: json) { (response, status) in
+            completion(response, status)
+        }
+    }
+    
     private static func makeAPICallWithResponse(url: URL, method: String, dict: [String: Any]?, completion: @escaping ([String: Any]?, Int) -> ()) {
         
         
@@ -56,7 +83,7 @@ class APIServices {
         request.httpMethod = method
         
         // insert json data to the request
-        if method == "POST" || method == "DELETE" {
+        if method == "POST" || method == "DELETE" || method == "PUT" {
             let jsonData = self.dictToJSONObject(dict: dict!)
             request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.httpBody = jsonData
