@@ -25,7 +25,15 @@ class ProfileController: UIViewController {
                     profileImageView.loadImagesUsingCacheWithURLString(url: url)
                 }
             }
+            
+            if user?.id != nil {
+                getBooks()
+            }
         }
+    }
+    
+    func getBooks() {
+        
     }
     
     let myprofileLabel: UILabel = {

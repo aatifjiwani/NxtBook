@@ -80,6 +80,26 @@ RSpec.describe 'GET /users', type: :request do
       end
     end
     
+    context "with existing books" do
+      let!(:sold_book) {create(:sold_book, user: user)}
+      let!(:bought_book) { create(:bought_book, user: user) }
+      
+      it 'gets all books' do
+        get user_path(user), params: params.merge(
+            {
+              id: user.id,
+              filter: "books"  
+            }
+          )
+        
+        expect(response.status).to eq(200)
+        expect(response.body).to eq(
+          {selling_books: [sold_book],
+          bought_books: [bought_book]}.to_json
+        )
+      end
+    end
+    
   end
     
   
