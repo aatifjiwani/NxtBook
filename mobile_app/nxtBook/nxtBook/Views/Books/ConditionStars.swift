@@ -17,6 +17,8 @@ class ConditionStars: UIView {
     
     var sizeToPut: CGFloat?
     
+    var currentCount: Int?
+    
     init(frame: CGRect, height: CGFloat) {
         super.init(frame: frame)
         sizeToPut = height
@@ -66,6 +68,8 @@ class ConditionStars: UIView {
         guard count > 0 && count <= 5 else {
             return
         }
+        
+        currentCount = count
         
         let stars: [UIImageView] = [starOne, starTwo, starThree, starFour, starFive]
         for i in 0...count-1 {

@@ -6,6 +6,7 @@ FactoryBot.define do
     isbn {"1234567898765"}
     price {5.99}
     condition {4}
+    edition {"4th"}
     user
     coverphoto {'https://image.shutterstock.com/image-vector/sample-red-square-grunge-stamp-260nw-338250266.jpg'}
   end

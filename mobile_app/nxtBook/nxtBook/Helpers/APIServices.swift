@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class APIServices {
     static let baseURL = "https://nxtbook.herokuapp.com"
@@ -48,6 +49,26 @@ class APIServices {
         
     }
     
+    static func createSoldBook(title: String, author: String, edition: String, isbn: String, price: Double, condition: Int, coverPhoto: String, userId: Int, completion: @escaping ([String: Any]?, Int) -> ()) {
+        let url = URL(string: "\(baseURL)/sold_books/?token=\(Secrets.appKey)")!
+        let json: [String: Any] = [
+            "user_id": userId,
+            "sold_book": [
+                "title": title.trimmingCharacters(in: .whitespacesAndNewlines),
+                "author": author.trimmingCharacters(in: .whitespacesAndNewlines),
+                "isbn": isbn.trimmingCharacters(in: .whitespacesAndNewlines),
+                "price": price,
+                "condition": condition,
+                "coverphoto": coverPhoto.trimmingCharacters(in: .whitespacesAndNewlines),
+                "edition": edition.trimmingCharacters(in: .whitespacesAndNewlines)
+            ],
+        ]
+        
+        makeAPICallWithResponse(url: url, method: "POST", dict: json) { (response, status) in
+            completion(response, status)
+        }
+    }
+    
     static func getImageFromURL(url: URL, completion: @escaping (Data) -> ()) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil{
@@ -75,6 +96,27 @@ class APIServices {
         }
     }
     
+    static func handleUploadImageToFirebase(image: UIImage, username: String, completion: @escaping (String) -> ()) {
+        let imageName = NSUUID().uuidString
+        let storage = Storage.storage().reference().child("\(username ?? "username")\(imageName).jpg")
+        if let data = UIImageJPEGRepresentation(image, 0.2) {
+            storage.putData(data, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    print(error!)
+                }
+                
+                storage.downloadURL(completion: { (url, error) in
+                    if let downURL = url?.absoluteString {
+                        print(downURL)
+                        completion(downURL)
+                    } else {
+                        //completion("")
+                    }
+                })
+            }
+        }
+    }
+    
     private static func makeAPICallWithResponse(url: URL, method: String, dict: [String: Any]?, completion: @escaping ([String: Any]?, Int) -> ()) {
         
         
@@ -84,7 +126,9 @@ class APIServices {
         
         // insert json data to the request
         if method == "POST" || method == "DELETE" || method == "PUT" {
+            print(dict)
             let jsonData = self.dictToJSONObject(dict: dict!)
+        
             request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.httpBody = jsonData
         }

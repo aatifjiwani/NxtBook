@@ -41,9 +41,9 @@ class SellBookModal: UIView {
         return field
     }()
     
-    let coverPhoto: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "addcoverphoto")
+    let coverPhoto: CoverPhotoImage = {
+        let view = CoverPhotoImage(frame: .zero)
+        view.changeImage(image: UIImage(named: "addcoverphoto")!, name: nil) 
         view.contentMode = .scaleAspectFit
         view.backgroundColor = UIColor.white
         view.layer.cornerRadius = 12
@@ -199,8 +199,52 @@ class SellBookModal: UIView {
         addSubview(sellBook)
         sellBook.anchorCenterXToSuperview()
         sellBook.anchor(nil, left: nil, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 20, rightConstant: 0, widthConstant: 170, heightConstant: 40)
+        sellBook.addTarget(self, action: #selector(handleSellNow), for: .touchUpInside)
 //        addSubview(buyBook)
 //        buyBook.anchor(nil, left: priceLabel.rightAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 15, bottomConstant: 0, rightConstant: 0, widthConstant: 170, heightConstant: 40)
 //        buyBook.centerYAnchor.constraint(equalTo: priceLabel.centerYAnchor).isActive = true
+    }
+    
+    @objc func handleSellNow() {
+        guard !(titleField.text?.isEmpty)! && !(authorField.text?.isEmpty)! && !(editionField.text?.isEmpty)! && !(isbn.text?.isEmpty)! && !(priceField.text?.isEmpty)! else {
+            print("oops first")
+            return
+        }
+        
+        guard let price = Double(priceField.text!) else {
+            print("oops price")
+            return
+        }
+        
+        guard isbnField.text?.count == 13 || isbnField.text?.count == 10 else {
+            print("oops isnb")
+            return
+        }
+        
+        guard let conditionCount = condition.currentCount else {
+            print("oops condition")
+            return
+        }
+        
+        guard coverPhoto.currName != nil else {
+            print("oops photo")
+            return
+        }
+        
+        guard let userId = controller?.user?.id else {
+            print("oops user")
+            return
+        }
+        
+        APIServices.handleUploadImageToFirebase(image: coverPhoto.image!, username: (controller?.user?.username!)!) { (url) in
+            
+            APIServices.createSoldBook(title: self.titleField.text!, author: self.authorField.text!, edition: self.editionField.text!, isbn: self.isbnField.text!, price: price, condition: conditionCount, coverPhoto: url, userId: userId) { (response, status) in
+                print(response)
+                print(status)
+            }
+            
+        }
+        
+        
     }
 }

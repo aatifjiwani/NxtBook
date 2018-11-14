@@ -93,7 +93,7 @@ class SellBookController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         
         if let toPut = selectedImage {
-            bookView.coverPhoto.image = toPut
+            bookView.coverPhoto.changeImage(image: toPut, name: "selectedImage")
         }
         
         dismiss(animated: true, completion: nil)

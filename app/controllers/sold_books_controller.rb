@@ -72,6 +72,6 @@ class SoldBooksController < ApplicationController
   
   private
   def book_params
-    params.require(:sold_book).permit(:title, :author, :isbn, :price, :condition, :coverphoto)
+    params.require(:sold_book).permit(:title, :author, :isbn, :price, :condition, :coverphoto, :edition)
   end
 end
