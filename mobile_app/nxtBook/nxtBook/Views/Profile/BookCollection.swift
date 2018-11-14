@@ -66,4 +66,12 @@ class BookCollection: UIView, UICollectionViewDelegateFlowLayout, UICollectionVi
         fatalError("init(coder:) has not been implemented")
     }
     
+    func loadBook(data: NSArray) {
+        for item in data  {
+            if let result = item as? [String: Any] {
+                print(result)
+            }
+        }
+    }
+    
 }

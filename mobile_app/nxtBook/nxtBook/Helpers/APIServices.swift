@@ -117,6 +117,15 @@ class APIServices {
         }
     }
     
+    static func getUserBooks(id: Int, completion: @escaping ([String: Any]?, Int) -> ()) {
+        let url = URL(string: "\(baseURL)/users/\(id)?filter=books&token=\(Secrets.appKey)")!
+        
+        makeAPICallWithResponse(url: url, method: "GET", dict: nil) { (response, status) in
+            completion(response,status)
+        }
+        
+    }
+    
     private static func makeAPICallWithResponse(url: URL, method: String, dict: [String: Any]?, completion: @escaping ([String: Any]?, Int) -> ()) {
         
         

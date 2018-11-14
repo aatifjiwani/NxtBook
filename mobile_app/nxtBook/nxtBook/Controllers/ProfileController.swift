@@ -33,7 +33,26 @@ class ProfileController: UIViewController {
     }
     
     func getBooks() {
-        
+        APIServices.getUserBooks(id: (user?.id!)!) { (response, status) in
+            guard let result = response else {
+                return
+            }
+            
+            if let sellingBooks = result["selling_books"] as? NSArray {
+//                print(sellingBooks)
+                if sellingBooks.count > 0 {
+                    self.sellingCollection.loadBook(data: sellingBooks)
+                }
+                
+            }
+            
+            if let boughtBooks = result["bought_books"] as? NSArray {
+//                print(boughtBooks)
+                if boughtBooks.count > 0 {
+                    self.boughtCollection.loadBook(data: boughtBooks)
+                }
+            }
+        }
     }
     
     let myprofileLabel: UILabel = {

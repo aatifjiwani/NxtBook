@@ -15,9 +15,16 @@ class Book: NSObject {
     var isbn: String?
     var price: Double?
     var condition: Int?
+    var coverPhotoUrl: String?
     
     init(json: [String: Any]) {
-        //TO IMPLEMENT LATER
+        self.title = json["title"] as? String
+        self.author = json["author"] as? String
+        self.isbn = json["isbn"] as? String
+        self.price = json["price"] as? Double
+        self.condition = json["condition"] as? Int
+        self.edition = json["edition"] as? String
+        self.coverPhotoUrl = json["coverPhotoUrl"] as? String
     }
     
     init(title: String, author: String, isbn: String, price: Double, condition: Int, edition: String?) {
