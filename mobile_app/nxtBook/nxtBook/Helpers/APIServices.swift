@@ -98,7 +98,7 @@ class APIServices {
     
     static func handleUploadImageToFirebase(image: UIImage, username: String, completion: @escaping (String) -> ()) {
         let imageName = NSUUID().uuidString
-        let storage = Storage.storage().reference().child("\(username ?? "username")\(imageName).jpg")
+        let storage = Storage.storage().reference().child("\(username)\(imageName).jpg")
         if let data = UIImageJPEGRepresentation(image, 0.2) {
             storage.putData(data, metadata: nil) { (metadata, error) in
                 if error != nil {
@@ -135,8 +135,7 @@ class APIServices {
         
         // insert json data to the request
         if method == "POST" || method == "DELETE" || method == "PUT" {
-            print(dict)
-            let jsonData = self.dictToJSONObject(dict: dict!)
+             let jsonData = self.dictToJSONObject(dict: dict!)
         
             request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.httpBody = jsonData

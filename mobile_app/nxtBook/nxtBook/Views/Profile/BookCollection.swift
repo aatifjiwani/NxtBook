@@ -21,20 +21,34 @@ class BookCollection: UIView, UICollectionViewDelegateFlowLayout, UICollectionVi
         cv.dataSource = self
         cv.register(PicBookCell.self, forCellWithReuseIdentifier: picBookCellID)
         cv.backgroundColor = UIColor.clear
+        cv.alwaysBounceHorizontal = true
         return cv
         
     }()
+    
+    var books = [Book]()
+    
+    var isLoading = true
     
     func collectionView(_ collectionView: UICollectionView, numberOfSections section: Int) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if isLoading {
+            return 3
+        } else {
+            return books.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: picBookCellID, for: indexPath) as! PicBookCell
+        
+        
+        if !isLoading {
+            cell.book = books[indexPath.item]
+        }
         return cell
     }
     
@@ -69,9 +83,13 @@ class BookCollection: UIView, UICollectionViewDelegateFlowLayout, UICollectionVi
     func loadBook(data: NSArray) {
         for item in data  {
             if let result = item as? [String: Any] {
-                print(result)
+                let toAddBook = Book(json: result)
+                books.append(toAddBook)
             }
         }
+        
+        isLoading = false
+        collectionView.reloadData()
     }
     
 }

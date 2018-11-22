@@ -18,7 +18,23 @@ class PicBookCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    let image: UIImageView = {
+        let view = UIImageView()
+        view.backgroundColor = UIColor.white
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+    
     func setupViews() {
-        backgroundColor = UIColor.white
+        addSubview(image)
+        image.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+    }
+    
+    var book: Book? {
+        didSet {
+            if let url = book?.coverPhotoUrl {
+                image.loadImagesUsingCacheWithURLString(url: url)
+            }
+        }
     }
 }

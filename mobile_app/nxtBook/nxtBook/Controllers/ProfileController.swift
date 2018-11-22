@@ -42,6 +42,9 @@ class ProfileController: UIViewController {
 //                print(sellingBooks)
                 if sellingBooks.count > 0 {
                     self.sellingCollection.loadBook(data: sellingBooks)
+                } else {
+                    self.sellingCollection.isLoading = false
+                    self.sellingCollection.collectionView.reloadData()
                 }
                 
             }
@@ -50,6 +53,9 @@ class ProfileController: UIViewController {
 //                print(boughtBooks)
                 if boughtBooks.count > 0 {
                     self.boughtCollection.loadBook(data: boughtBooks)
+                } else {
+                    self.boughtCollection.isLoading = false
+                    self.boughtCollection.collectionView.reloadData()
                 }
             }
         }

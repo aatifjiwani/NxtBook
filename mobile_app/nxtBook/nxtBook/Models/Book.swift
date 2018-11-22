@@ -18,13 +18,20 @@ class Book: NSObject {
     var coverPhotoUrl: String?
     
     init(json: [String: Any]) {
+        print(json)
         self.title = json["title"] as? String
         self.author = json["author"] as? String
         self.isbn = json["isbn"] as? String
-        self.price = json["price"] as? Double
+        
+        if let toPrice = json["price"] as? String
+        {
+            self.price = Double(toPrice)
+        }
+        
+        
         self.condition = json["condition"] as? Int
         self.edition = json["edition"] as? String
-        self.coverPhotoUrl = json["coverPhotoUrl"] as? String
+        self.coverPhotoUrl = json["coverphoto"] as? String
     }
     
     init(title: String, author: String, isbn: String, price: Double, condition: Int, edition: String?) {
