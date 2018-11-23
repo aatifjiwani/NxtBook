@@ -228,7 +228,61 @@ class ProfileController: UIViewController {
         view.addSubview(boughtCollection)
         boughtCollection.anchor(boughtBackground.topAnchor, left: boughtBackground.leftAnchor, bottom: boughtBackground.bottomAnchor, right: boughtBackground.rightAnchor, topConstant: 10, leftConstant: 15, bottomConstant: 10, rightConstant: 15, widthConstant: 0, heightConstant: 0)
         
+        configCollections()
+    }
+    
+    func configCollections() {
+        let collections: [BookCollection] = [sellingCollection, soldCollection, pendingCollection, boughtCollection]
+        for i in 0...3 {
+            collections[i].tag = i
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(handleClickedCollection(sender:)))
+            collections[i].addGestureRecognizer(gesture)
+            collections[i].isUserInteractionEnabled = true
+            collections[i].isMultipleTouchEnabled = true
+        }
+    }
+    
+    @objc func handleClickedCollection(sender: UITapGestureRecognizer) {
+        guard let tag = sender.view?.tag else {
+            return
+        }
         
+        let viewController = ShowBookCollectionController()
+        viewController.backController = self
+        viewController.user = self.user
+        
+        guard let collection = sender.view as? BookCollection else {
+            return
+        }
+        
+        let data = collection.books
+        
+        
+        
+        switch tag {
+        case 0:
+            viewController.setupTypeOfBooks(title: "books you're selling", books: data, tag: 1)
+            break
+        case 1:
+            viewController.setupTypeOfBooks(title: "sold books", books: data, tag: 0)
+            break
+        case 2:
+            viewController.setupTypeOfBooks(title: "pending purchases", books: data, tag: 2)
+            break
+        case 3:
+            viewController.setupTypeOfBooks(title: "bought books", books: data, tag: 0)
+            break
+        default:
+            break
+        }
+        
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionFade
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        
+        present(viewController, animated: false)
     }
     
     @objc func handleBack() {

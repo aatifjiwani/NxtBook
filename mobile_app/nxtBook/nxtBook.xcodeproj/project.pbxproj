@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390DDCAF21A7702A00FF8E0F /* ShowBookCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390DDCAE21A7702A00FF8E0F /* ShowBookCollectionController.swift */; };
+		390DDCB121A7755600FF8E0F /* FullBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390DDCB021A7755600FF8E0F /* FullBookCell.swift */; };
+		390DDCB321A775BD00FF8E0F /* FullBookCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390DDCB221A775BD00FF8E0F /* FullBookCollection.swift */; };
 		3929BB0F2170498900792372 /* FindBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929BB0E2170498900792372 /* FindBook.swift */; };
 		3929BB1221704B9900792372 /* ShowBookModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929BB1121704B9900792372 /* ShowBookModal.swift */; };
 		3929BB1421704BEB00792372 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929BB1321704BEB00792372 /* Book.swift */; };
@@ -89,6 +92,9 @@
 		073E8C86FD484D5B15810FFA /* Pods_nxtBookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nxtBookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FA0C62B5EBB7F2220B6520 /* Pods-nxtBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nxtBookUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nxtBookUITests/Pods-nxtBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3717218E7804C66B387B1204 /* Pods-nxtBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nxtBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nxtBookTests/Pods-nxtBookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		390DDCAE21A7702A00FF8E0F /* ShowBookCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBookCollectionController.swift; sourceTree = "<group>"; };
+		390DDCB021A7755600FF8E0F /* FullBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullBookCell.swift; sourceTree = "<group>"; };
+		390DDCB221A775BD00FF8E0F /* FullBookCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullBookCollection.swift; sourceTree = "<group>"; };
 		3929BB0E2170498900792372 /* FindBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindBook.swift; sourceTree = "<group>"; };
 		3929BB1121704B9900792372 /* ShowBookModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBookModal.swift; sourceTree = "<group>"; };
 		3929BB1321704BEB00792372 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -195,6 +201,7 @@
 				3929BB172170564900792372 /* BuyBookButton.swift */,
 				392B5747219BA3E600F1325B /* SellBookModal.swift */,
 				392B5749219BBE5400F1325B /* CoverPhotoImage.swift */,
+				390DDCB221A775BD00FF8E0F /* FullBookCollection.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -287,6 +294,7 @@
 				39F6A54C21801FA700B48EE8 /* ProfileController.swift */,
 				399807EA2187FEE1001607E7 /* EditProfileController.swift */,
 				392B5745219B9FF700F1325B /* SellBookController.swift */,
+				390DDCAE21A7702A00FF8E0F /* ShowBookCollectionController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -389,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				39F6A55221802B1000B48EE8 /* PicBookCell.swift */,
+				390DDCB021A7755600FF8E0F /* FullBookCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -653,6 +662,7 @@
 				392B574A219BBE5400F1325B /* CoverPhotoImage.swift in Sources */,
 				398A9FCE216864E7007F97B9 /* UserDefaultsExtension.swift in Sources */,
 				397B3CE8216587EB003BAF0C /* SignupModal.swift in Sources */,
+				390DDCAF21A7702A00FF8E0F /* ShowBookCollectionController.swift in Sources */,
 				39E54577216ED54F003B79C5 /* AboutBotModal.swift in Sources */,
 				39A191F82160273100D6786C /* SearchField.swift in Sources */,
 				39A191EB21600EFF00D6786C /* IndexController.swift in Sources */,
@@ -660,6 +670,7 @@
 				3929BB1221704B9900792372 /* ShowBookModal.swift in Sources */,
 				397B3CEA21658FD0003BAF0C /* LoginModal.swift in Sources */,
 				398A9FC821685DBF007F97B9 /* APIServices.swift in Sources */,
+				390DDCB321A775BD00FF8E0F /* FullBookCollection.swift in Sources */,
 				398A9FD121698015007F97B9 /* SignupController.swift in Sources */,
 				39F6A550218029F400B48EE8 /* BookCollection.swift in Sources */,
 				39BF216A21619C46005C64A7 /* LoginSignupController.swift in Sources */,
@@ -680,6 +691,7 @@
 				3929BB162170511000792372 /* ConditionStars.swift in Sources */,
 				398A9FCC21686456007F97B9 /* User.swift in Sources */,
 				39E5457E216EDD4F003B79C5 /* BuyAndSell.swift in Sources */,
+				390DDCB121A7755600FF8E0F /* FullBookCell.swift in Sources */,
 				39E5456E216ECEB9003B79C5 /* AboutController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
