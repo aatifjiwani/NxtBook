@@ -16,6 +16,7 @@ class Book: NSObject {
     var price: Double?
     var condition: Int?
     var coverPhotoUrl: String?
+    var id: Int?
     
     init(json: [String: Any]) {
         print(json)
@@ -32,6 +33,7 @@ class Book: NSObject {
         self.condition = json["condition"] as? Int
         self.edition = json["edition"] as? String
         self.coverPhotoUrl = json["coverphoto"] as? String
+        self.id = json["id"] as? Int
     }
     
     init(title: String, author: String, isbn: String, price: Double, condition: Int, edition: String?) {

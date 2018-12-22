@@ -247,6 +247,16 @@ class IndexController: UIViewController {
     }
     
     @objc func handleBuyBooks() {
+        let viewController = BuyBookController()
+        viewController.user = self.user
+        
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionFade
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        
+        present(viewController, animated: false)
 //        let viewController = ProfileController()
 //        viewController.indexController = self
 //        viewController.user = self.user

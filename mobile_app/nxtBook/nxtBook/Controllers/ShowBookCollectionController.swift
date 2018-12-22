@@ -98,5 +98,7 @@ class ShowBookCollectionController: UIViewController {
         
         self.view.layer.addSublayer(gradientLayer)
     }
+    
+    
 }
 

@@ -29,6 +29,9 @@
 		397B3CEC21659236003BAF0C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CEB21659236003BAF0C /* LoginController.swift */; };
 		397B3CEF21659335003BAF0C /* NativeLoginModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CEE21659335003BAF0C /* NativeLoginModal.swift */; };
 		397B3CF121659523003BAF0C /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CF021659523003BAF0C /* BackgroundView.swift */; };
+		3989200421CDA7D60000FA37 /* DynamicBookModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989200321CDA7D60000FA37 /* DynamicBookModal.swift */; };
+		3989200821CDAF760000FA37 /* BuyBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989200721CDAF760000FA37 /* BuyBookController.swift */; };
+		3989200921CDC0500000FA37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BF21600E2600D6786C /* Assets.xcassets */; };
 		398A9FC62168579A007F97B9 /* CredentialField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A9FC52168579A007F97B9 /* CredentialField.swift */; };
 		398A9FC821685DBF007F97B9 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A9FC721685DBF007F97B9 /* APIServices.swift */; };
 		398A9FCA21685E14007F97B9 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A9FC921685E14007F97B9 /* Secrets.swift */; };
@@ -40,7 +43,6 @@
 		399807EF21880C0E001607E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 399807EE21880C0E001607E7 /* GoogleService-Info.plist */; };
 		39A191B921600E2600D6786C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191B821600E2600D6786C /* AppDelegate.swift */; };
 		39A191BE21600E2600D6786C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BC21600E2600D6786C /* Main.storyboard */; };
-		39A191C021600E2600D6786C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A191BF21600E2600D6786C /* Assets.xcassets */; };
 		39A191C321600E2600D6786C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A191C121600E2600D6786C /* LaunchScreen.storyboard */; };
 		39A191CE21600E2600D6786C /* nxtBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191CD21600E2600D6786C /* nxtBookTests.swift */; };
 		39A191D921600E2600D6786C /* nxtBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A191D821600E2600D6786C /* nxtBookUITests.swift */; };
@@ -114,6 +116,8 @@
 		397B3CEB21659236003BAF0C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		397B3CEE21659335003BAF0C /* NativeLoginModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeLoginModal.swift; sourceTree = "<group>"; };
 		397B3CF021659523003BAF0C /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		3989200321CDA7D60000FA37 /* DynamicBookModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicBookModal.swift; sourceTree = "<group>"; };
+		3989200721CDAF760000FA37 /* BuyBookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyBookController.swift; sourceTree = "<group>"; };
 		398A9FC52168579A007F97B9 /* CredentialField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialField.swift; sourceTree = "<group>"; };
 		398A9FC721685DBF007F97B9 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		398A9FC921685E14007F97B9 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 				392B5747219BA3E600F1325B /* SellBookModal.swift */,
 				392B5749219BBE5400F1325B /* CoverPhotoImage.swift */,
 				390DDCB221A775BD00FF8E0F /* FullBookCollection.swift */,
+				3989200321CDA7D60000FA37 /* DynamicBookModal.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				399807EA2187FEE1001607E7 /* EditProfileController.swift */,
 				392B5745219B9FF700F1325B /* SellBookController.swift */,
 				390DDCAE21A7702A00FF8E0F /* ShowBookCollectionController.swift */,
+				3989200721CDAF760000FA37 /* BuyBookController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -534,10 +540,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A191C321600E2600D6786C /* LaunchScreen.storyboard in Resources */,
-				39A191C021600E2600D6786C /* Assets.xcassets in Resources */,
 				399807EF21880C0E001607E7 /* GoogleService-Info.plist in Resources */,
 				39A191EE216011EF00D6786C /* Mont-HeavyDEMO.otf in Resources */,
 				39A191BE21600E2600D6786C /* Main.storyboard in Resources */,
+				3989200921CDC0500000FA37 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +686,7 @@
 				39AC8B44218C2AD500D163E0 /* ChangePasswordModal.swift in Sources */,
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
 				3929BB1A2170592200792372 /* ChatToBuy.swift in Sources */,
+				3989200821CDAF760000FA37 /* BuyBookController.swift in Sources */,
 				39381D6F21751F740094ACB0 /* MarkAsComplete.swift in Sources */,
 				397B3CEF21659335003BAF0C /* NativeLoginModal.swift in Sources */,
 				392B5748219BA3E600F1325B /* SellBookModal.swift in Sources */,
@@ -693,6 +700,7 @@
 				39E5457E216EDD4F003B79C5 /* BuyAndSell.swift in Sources */,
 				390DDCB121A7755600FF8E0F /* FullBookCell.swift in Sources */,
 				39E5456E216ECEB9003B79C5 /* AboutController.swift in Sources */,
+				3989200421CDA7D60000FA37 /* DynamicBookModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

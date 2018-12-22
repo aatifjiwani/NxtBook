@@ -5,10 +5,7 @@ class SoldBooksController < ApplicationController
   def index
     filter = params[:filter]
     if filter == "search"
-      #to be implemented later
-    elsif filter == "user"
-      verify_user_id
-      #to be implemented later
+      #to be implemented laterx
     else
       books = SoldBook.recent
       render json: {

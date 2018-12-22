@@ -55,6 +55,12 @@ class FullBookCollection: UIView, UICollectionViewDelegateFlowLayout, UICollecti
         return CGSize(width: self.collectionView.frame.size.width, height: 80)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("selected item")
+        let selectedBook = books[indexPath.item]
+        showBookModal(book: selectedBook)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.clear
@@ -74,6 +80,50 @@ class FullBookCollection: UIView, UICollectionViewDelegateFlowLayout, UICollecti
     }
     
     let picBookCellID = "picBookCellID"
+    
+    var partialWhiteBackground: UIView?
+    var bookModal: DynamicBookModal?
+    
+    func showBookModal(book: Book) {
+        bookModal = DynamicBookModal()
+        bookModal?.alpha = 0
+        
+        if let window = UIApplication.shared.keyWindow {
+            partialWhiteBackground = UIView(frame: window.frame)
+            partialWhiteBackground?.backgroundColor = UIColor.white
+            partialWhiteBackground?.alpha = 0
+            
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(handleGoBack))
+            partialWhiteBackground?.addGestureRecognizer(gesture)
+            partialWhiteBackground?.isUserInteractionEnabled = true
+            partialWhiteBackground?.isMultipleTouchEnabled = true
+            
+            window.addSubview(partialWhiteBackground!)
+            window.addSubview(bookModal!)
+            bookModal?.anchor(nil, left: window.leftAnchor, bottom: nil, right: window.rightAnchor, topConstant: 0, leftConstant: 10, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 360)
+            bookModal?.anchorCenterYToSuperview()
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                self.bookModal?.alpha = 1
+                self.partialWhiteBackground?.alpha = 0.7
+            }) { (bool) in
+                guard bool else {
+                    return
+                }
+                
+                self.bookModal?.buyBook.gradient.frame = (self.bookModal?.buyBook.bounds)!
+            }
+        }
+    }
+    
+    @objc func handleGoBack() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            self.bookModal?.alpha = 0
+            self.partialWhiteBackground?.alpha = 0
+        }, completion: { (completed) in
+            self.bookModal?.removeFromSuperview()
+            self.partialWhiteBackground?.removeFromSuperview()
+        })
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
