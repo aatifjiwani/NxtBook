@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show, :update]
   
-  resources :sold_books, except: [:edit, :new]
-  resources :bought_books, only: [:create, :index, :show]
+  resources :sold_books, only: [:index, :show]
+  resources :bought_books, only: [:index, :show]
+  resources :pending_books, only: [:index, :show]
+  resources :selling_books, except: [:edit, :new]
+  resources :transactions, only: [:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

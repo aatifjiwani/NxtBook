@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_023806) do
+ActiveRecord::Schema.define(version: 2019_01_10_201315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,36 @@ ActiveRecord::Schema.define(version: 2018_11_14_023806) do
     t.string "jti", null: false
     t.datetime "exp", null: false
     t.index ["jti"], name: "index_jwt_blacklist_on_jti"
+  end
+
+  create_table "pending_books", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "author", null: false
+    t.string "isbn", null: false
+    t.decimal "price", null: false
+    t.integer "condition", null: false
+    t.bigint "user_id"
+    t.string "coverphoto"
+    t.string "edition", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "sold_book_id"
+    t.index ["sold_book_id"], name: "index_pending_books_on_sold_book_id"
+    t.index ["user_id"], name: "index_pending_books_on_user_id"
+  end
+
+  create_table "selling_books", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "author", null: false
+    t.string "isbn", null: false
+    t.decimal "price", null: false
+    t.integer "condition", null: false
+    t.bigint "user_id"
+    t.string "coverphoto"
+    t.string "edition", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_selling_books_on_user_id"
   end
 
   create_table "sold_books", force: :cascade do |t|

@@ -20,6 +20,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/environment_variables.yml
 
 # Ignore secrets
 mobile_app/nxtBook/nxtBook/Helpers/Secrets.swift

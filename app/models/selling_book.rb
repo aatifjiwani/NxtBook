@@ -1,7 +1,5 @@
-class SoldBook < ApplicationRecord
+class SellingBook < ApplicationRecord
   belongs_to :user
-  
-  has_one :pending_book, dependent: :destroy
   
   validates :author, presence: true
   validates :title, presence: true

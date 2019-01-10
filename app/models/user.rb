@@ -11,6 +11,8 @@ class User < ApplicationRecord
   
   has_many :sold_books
   has_many :bought_books
+  has_many :selling_books
+  has_many :pending_books
   
   def create_username
     fullname = "#{self.firstname.downcase}#{self.lastname.downcase}"

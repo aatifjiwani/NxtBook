@@ -6,6 +6,7 @@ class BoughtBook < ApplicationRecord
   validates :isbn, presence: true
   validates :condition, presence: true
   validates :price, presence: true
+  validates :edition, presence: true
   
   validates :user, presence: true
   

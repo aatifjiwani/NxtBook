@@ -1,7 +1,5 @@
-class SoldBook < ApplicationRecord
+class PendingBook < ApplicationRecord
   belongs_to :user
-  
-  has_one :pending_book, dependent: :destroy
   
   validates :author, presence: true
   validates :title, presence: true
@@ -11,6 +9,8 @@ class SoldBook < ApplicationRecord
   validates :edition, presence: true
   
   validates :user, presence: true
+  
+  belongs_to :sold_book
   
   scope :recent, -> { all.order(created_at: :desc) }
 end
