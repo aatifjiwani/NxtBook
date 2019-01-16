@@ -38,6 +38,8 @@ class ProfileController: UIViewController {
                 return
             }
             
+            print(result)
+            
             if let sellingBooks = result["selling_books"] as? NSArray {
 //                print(sellingBooks)
                 if sellingBooks.count > 0 {

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "nxtBook/Controllers/ProfileController.swift"
-            timestampString = "564624091.33663"
+            timestampString = "569354800.522591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "handleBack()"
             landmarkType = "7">
          </BreakpointContent>
