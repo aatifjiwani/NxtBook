@@ -50,10 +50,10 @@ class APIServices {
     }
     
     static func createSoldBook(title: String, author: String, edition: String, isbn: String, price: Double, condition: Int, coverPhoto: String, userId: Int, completion: @escaping ([String: Any]?, Int) -> ()) {
-        let url = URL(string: "\(baseURL)/sold_books/?token=\(Secrets.appKey)")!
+        let url = URL(string: "\(baseURL)/selling_books/?token=\(Secrets.appKey)")!
         let json: [String: Any] = [
             "user_id": userId,
-            "sold_book": [
+            "selling_book": [
                 "title": title.trimmingCharacters(in: .whitespacesAndNewlines),
                 "author": author.trimmingCharacters(in: .whitespacesAndNewlines),
                 "isbn": isbn.trimmingCharacters(in: .whitespacesAndNewlines),

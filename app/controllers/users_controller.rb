@@ -15,7 +15,9 @@ class UsersController < ApplicationController
   def render_user_books
     render(json: {
       selling_books: @user.sold_books.as_json,  
-      bought_books: @user.bought_books.as_json
+      bought_books: @user.bought_books.as_json,
+      pending_books: @user.pending_books.as_json,
+      sold_books: @user.sold_books.as_json
       }, status: :ok)
   end
   
