@@ -239,6 +239,12 @@ class SellBookModal: UIView {
         APIServices.handleUploadImageToFirebase(image: coverPhoto.image!, username: (controller?.user?.username!)!) { (url) in
             
             APIServices.createSoldBook(title: self.titleField.text!, author: self.authorField.text!, edition: self.editionField.text!, isbn: self.isbnField.text!, price: price, condition: conditionCount, coverPhoto: url, userId: userId) { (response, status) in
+                
+                if status == 200 {
+                    self.controller?.handleGoToConfirmPage()
+                } else {
+                    
+                }
             }
             
         }

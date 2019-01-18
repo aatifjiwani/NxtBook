@@ -66,12 +66,13 @@ class AboutController: UIViewController {
     
     @objc func handleBack() {
         if indexController != nil {
-            let viewController = indexController
             let transition = CATransition()
-            transition.type = kCATransitionFromBottom
-            if let window = UIApplication.shared.keyWindow {
-                window.set(rootViewController: viewController!, withTransition: transition)
-            }
+            transition.duration = 0.5
+            transition.type = kCATransitionFade
+            transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+            view.window!.layer.add(transition, forKey: kCATransition)
+            
+            dismiss(animated: false, completion: nil)
         }
     }
 

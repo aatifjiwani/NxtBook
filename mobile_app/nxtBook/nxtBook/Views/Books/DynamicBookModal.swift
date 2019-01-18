@@ -24,6 +24,40 @@ class DynamicBookModal: UIView {
         }
     }
     
+    var typeLayout: Int? {
+        didSet {
+            switch typeLayout {
+                case 0:
+                    break
+                case 1:
+                    addSubview(chatButton)
+                    chatButton.anchor(priceLabel.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 15, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 150, heightConstant: 40)
+                    chatButton.centerXAnchor.constraint(equalTo: priceLabel.centerXAnchor).isActive = true
+                    break
+                case 2:
+                    addSubview(chatButton)
+                    chatButton.anchor(priceLabel.bottomAnchor, left: nil, bottom: nil, right: priceLabel.centerXAnchor, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 10, widthConstant: 150, heightConstant: 40)
+                    
+                    addSubview(completeButton)
+                    completeButton.anchor(priceLabel.bottomAnchor, left: chatButton.rightAnchor, bottom: nil, right: nil, topConstant: 5, leftConstant: 20, bottomConstant: 0, rightConstant: 0, widthConstant: 150, heightConstant: 40)
+                    
+                    addSubview(cancelButton)
+                    cancelButton.anchor(chatButton.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 220, heightConstant: 40)
+                    cancelButton.centerXAnchor.constraint(equalTo: priceLabel.centerXAnchor).isActive = true
+                    break
+                case 3:
+                    break
+                case 4:
+                    addSubview(cancelButton)
+                    cancelButton.anchor(priceLabel.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 220, heightConstant: 40)
+                    cancelButton.centerXAnchor.constraint(equalTo: priceLabel.centerXAnchor).isActive = true
+                    break
+                default:
+                    break
+            }
+        }
+    }
+    
     let backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.nxtOrange
@@ -117,10 +151,49 @@ class DynamicBookModal: UIView {
     let buyBook: BuyBookButton = {
         let button = BuyBookButton(type: .custom)
         button.frame = CGRect(x: 0, y: 0, width: 170, height: 40)
-        button.setTitle("buy now", for: .normal)
+        button.setTitle("secure", for: .normal)
         button.titleLabel?.font = UIFont(name: "Futura-Medium", size: 24)
         return button
     }()
+    
+    let chatButton: BuyBookButton = {
+        let button = BuyBookButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 150, height: 40)
+        button.setTitle("chat", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Futura-Medium", size: 24)
+        return button
+    }()
+    
+    let completeButton: BuyBookButton = {
+        let button = BuyBookButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 150, height: 40)
+        button.setTitle("complete", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Futura-Medium", size: 24)
+        return button
+    }()
+    
+    let cancelButton: BuyBookButton = {
+        let button = BuyBookButton(type: .system)
+        button.frame = CGRect(x: 0, y: 0, width: 170, height: 40)
+        button.setTitle("cancel transaction", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Futura-Medium", size: 24)
+        return button
+    }()
+    
+    func setupBook(book: Book) {
+        guard let title = book.title, let author = book.author, let edition = book.edition, let isbn = book.isbn, let cond = book.condition, let price = book.price, let cover = book.coverPhotoUrl else {
+            return
+        }
+        
+        titleLabel.text = title
+        authorLabel.text = author
+        editionLabel.text = edition
+        isbnLabel.text = isbn
+        condition.changeStarCount(count: cond)
+        priceLabel.text = "$\(price)"
+        coverPhoto.loadImagesUsingCacheWithURLString(url: cover)
+        
+    }
     
     func setupViews() {
         addSubview(backgroundView)
@@ -162,11 +235,8 @@ class DynamicBookModal: UIView {
         condition.changeStarCount(count: 4)
         
         addSubview(priceLabel)
-        priceLabel.anchor(coverPhoto.bottomAnchor, left: coverPhoto.leftAnchor, bottom: nil, right: nil, topConstant: 15, leftConstant: 35, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        priceLabel.anchor(coverPhoto.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 15, leftConstant: 35, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         priceLabel.sizeToFit()
-        
-        addSubview(buyBook)
-        buyBook.anchor(nil, left: priceLabel.rightAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 15, bottomConstant: 0, rightConstant: 0, widthConstant: 170, heightConstant: 40)
-        buyBook.centerYAnchor.constraint(equalTo: priceLabel.centerYAnchor).isActive = true
+        priceLabel.anchorCenterXToSuperview()
     }
 }

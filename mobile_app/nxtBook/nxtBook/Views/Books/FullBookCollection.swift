@@ -29,6 +29,8 @@ class FullBookCollection: UIView, UICollectionViewDelegateFlowLayout, UICollecti
     
     var isLoading = true
     
+    var typeLayout: Int?
+    
     func collectionView(_ collectionView: UICollectionView, numberOfSections section: Int) -> Int {
         return 1
     }
@@ -87,6 +89,13 @@ class FullBookCollection: UIView, UICollectionViewDelegateFlowLayout, UICollecti
     func showBookModal(book: Book) {
         bookModal = DynamicBookModal()
         bookModal?.alpha = 0
+        bookModal?.setupBook(book: book)
+        
+        if typeLayout != nil{
+            bookModal?.typeLayout = typeLayout
+        } else {
+            bookModal?.typeLayout = 0
+        }
         
         if let window = UIApplication.shared.keyWindow {
             partialWhiteBackground = UIView(frame: window.frame)
@@ -100,7 +109,7 @@ class FullBookCollection: UIView, UICollectionViewDelegateFlowLayout, UICollecti
             
             window.addSubview(partialWhiteBackground!)
             window.addSubview(bookModal!)
-            bookModal?.anchor(nil, left: window.leftAnchor, bottom: nil, right: window.rightAnchor, topConstant: 0, leftConstant: 10, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 360)
+            bookModal?.anchor(nil, left: window.leftAnchor, bottom: nil, right: window.rightAnchor, topConstant: 0, leftConstant: 10, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 420)
             bookModal?.anchorCenterYToSuperview()
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
                 self.bookModal?.alpha = 1
@@ -110,7 +119,19 @@ class FullBookCollection: UIView, UICollectionViewDelegateFlowLayout, UICollecti
                     return
                 }
                 
-                self.bookModal?.buyBook.gradient.frame = (self.bookModal?.buyBook.bounds)!
+                switch self.typeLayout {
+                case 1:
+                    self.bookModal?.chatButton.gradient.frame = (self.bookModal?.chatButton.bounds)!
+                    break
+                case 2:
+                    self.bookModal?.chatButton.gradient.frame = (self.bookModal?.chatButton.bounds)!
+                    self.bookModal?.completeButton.gradient.frame = (self.bookModal?.completeButton.bounds)!
+                    break
+                default:
+                    break
+                }
+                
+                //self.bookModal?.buyBook.gradient.frame = (self.bookModal?.buyBook.bounds)!
             }
         }
     }

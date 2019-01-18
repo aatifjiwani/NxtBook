@@ -41,12 +41,14 @@ class ShowBookCollectionController: UIViewController {
     let typeCollection = FullBookCollection()
     
     func setupTypeOfBooks(title: String, books: [Book], tag: Int?) {
-        //tag = 0 --> No button appears on collection
-        //tag = 1 --> Chat button appears on collection
-        //tag = 2 --> Chat and Complete button appears on collection
+        //tag = 0 --> No button appears on collection (Bought)
+        //tag = 1 --> Chat button appears on collection (Sold)
+        //tag = 2 --> Chat, Complete, and cancel button appears on collection (Pending)
+        //tag = 4 --> Cancel button appears on collection (Selling)
         
         typeLabel.text = title
         typeCollection.loadBook(data: books)
+        typeCollection.typeLayout = tag
     }
     
     func setupViews() {
@@ -77,6 +79,8 @@ class ShowBookCollectionController: UIViewController {
             transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
             view.window!.layer.add(transition, forKey: kCATransition)
             dismiss(animated: false, completion: nil)
+        } else {
+            
         }
     }
     

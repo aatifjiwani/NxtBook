@@ -4,7 +4,12 @@ class SearchController < ApplicationController
     
     query = params[:query]
     
-    if contains_isbn(query)
+    if query.nil?
+      render json: {
+        books: SellingBook.recent.as_json
+        }, status: :ok
+    
+    elsif contains_isbn(query)
       
       books = SellingBook.where(isbn: query)
       
@@ -12,9 +17,11 @@ class SearchController < ApplicationController
             books: books.as_json
         }, status: :ok
     else
+      
       edition = params[:edition]
       price_low = params[:price_low]
       price_high = params[:price_high]
+      cond = params[:condition]
       
       books = SellingBook.search_by(query).records.all
       
@@ -30,6 +37,10 @@ class SearchController < ApplicationController
       if price_high.present?
         high = price_high.to_d
         books = books.where("price <= #{high}")
+      end
+      
+      if cond.present?
+        books = books.where("condition >= #{cond}")
       end
       
       render json: {

@@ -220,10 +220,12 @@ class IndexController: UIViewController {
         let viewController = AboutController()
         viewController.indexController = self
         let transition = CATransition()
-        transition.type = kCATransitionFromBottom
-        if let window = UIApplication.shared.keyWindow {
-            window.set(rootViewController: viewController, withTransition: transition)
-        }
+        transition.duration = 0.5
+        transition.type = kCATransitionFade
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        
+        present(viewController, animated: false)
     }
     
     @objc func handleProfile() {

@@ -60,6 +60,26 @@ class ProfileController: UIViewController {
                     self.boughtCollection.collectionView.reloadData()
                 }
             }
+            
+            if let soldBooks = result["sold_books"] as? NSArray {
+                //                print(boughtBooks)
+                if soldBooks.count > 0 {
+                    self.soldCollection.loadBook(data: soldBooks)
+                } else {
+                    self.soldCollection.isLoading = false
+                    self.soldCollection.collectionView.reloadData()
+                }
+            }
+            
+            if let pendingBooks = result["pending_books"] as? NSArray {
+                //                print(boughtBooks)
+                if pendingBooks.count > 0 {
+                    self.pendingCollection.loadBook(data: pendingBooks)
+                } else {
+                    self.pendingCollection.isLoading = false
+                    self.pendingCollection.collectionView.reloadData()
+                }
+            }
         }
     }
     
@@ -263,10 +283,11 @@ class ProfileController: UIViewController {
         
         switch tag {
         case 0:
+            //tag 4
             viewController.setupTypeOfBooks(title: "books you're selling", books: data, tag: 1)
             break
         case 1:
-            viewController.setupTypeOfBooks(title: "sold books", books: data, tag: 0)
+            viewController.setupTypeOfBooks(title: "sold books", books: data, tag: 1)
             break
         case 2:
             viewController.setupTypeOfBooks(title: "pending purchases", books: data, tag: 2)
@@ -294,7 +315,9 @@ class ProfileController: UIViewController {
         transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
         view.window!.layer.add(transition, forKey: kCATransition)
         
-        dismiss(animated: false, completion: nil)
+        print("go back")
+        
+        indexController?.dismiss(animated: false, completion: nil)
     }
     
     @objc func handleSettings() {

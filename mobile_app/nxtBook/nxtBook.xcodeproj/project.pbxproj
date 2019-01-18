@@ -22,6 +22,7 @@
 		392B574A219BBE5400F1325B /* CoverPhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B5749219BBE5400F1325B /* CoverPhotoImage.swift */; };
 		39381D6F21751F740094ACB0 /* MarkAsComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39381D6E21751F740094ACB0 /* MarkAsComplete.swift */; };
 		39381D712175296C0094ACB0 /* SellABook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39381D702175296C0094ACB0 /* SellABook.swift */; };
+		394093A721EFC26200CE1F49 /* ConfirmBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394093A621EFC26200CE1F49 /* ConfirmBookController.swift */; };
 		3967CE20216988FC00EA5476 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */; };
 		397B3CE62165830A003BAF0C /* AccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CE52165830A003BAF0C /* AccountButton.swift */; };
 		397B3CE8216587EB003BAF0C /* SignupModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CE7216587EB003BAF0C /* SignupModal.swift */; };
@@ -109,6 +110,7 @@
 		392B5749219BBE5400F1325B /* CoverPhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPhotoImage.swift; sourceTree = "<group>"; };
 		39381D6E21751F740094ACB0 /* MarkAsComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkAsComplete.swift; sourceTree = "<group>"; };
 		39381D702175296C0094ACB0 /* SellABook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellABook.swift; sourceTree = "<group>"; };
+		394093A621EFC26200CE1F49 /* ConfirmBookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmBookController.swift; sourceTree = "<group>"; };
 		3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		397B3CE52165830A003BAF0C /* AccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountButton.swift; sourceTree = "<group>"; };
 		397B3CE7216587EB003BAF0C /* SignupModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModal.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				392B5745219B9FF700F1325B /* SellBookController.swift */,
 				390DDCAE21A7702A00FF8E0F /* ShowBookCollectionController.swift */,
 				3989200721CDAF760000FA37 /* BuyBookController.swift */,
+				394093A621EFC26200CE1F49 /* ConfirmBookController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				39AC8B44218C2AD500D163E0 /* ChangePasswordModal.swift in Sources */,
 				39A191B921600E2600D6786C /* AppDelegate.swift in Sources */,
 				3929BB1A2170592200792372 /* ChatToBuy.swift in Sources */,
+				394093A721EFC26200CE1F49 /* ConfirmBookController.swift in Sources */,
 				3989200821CDAF760000FA37 /* BuyBookController.swift in Sources */,
 				39381D6F21751F740094ACB0 /* MarkAsComplete.swift in Sources */,
 				397B3CEF21659335003BAF0C /* NativeLoginModal.swift in Sources */,
