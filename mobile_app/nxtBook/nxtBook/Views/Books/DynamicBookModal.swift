@@ -46,6 +46,9 @@ class DynamicBookModal: UIView {
                     cancelButton.centerXAnchor.constraint(equalTo: priceLabel.centerXAnchor).isActive = true
                     break
                 case 3:
+                    addSubview(buyBook)
+                    buyBook.anchor(priceLabel.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 15, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 150, heightConstant: 40)
+                    buyBook.centerXAnchor.constraint(equalTo: priceLabel.centerXAnchor).isActive = true
                     break
                 case 4:
                     addSubview(cancelButton)

@@ -127,6 +127,9 @@ class FullBookCollection: UIView, UICollectionViewDelegateFlowLayout, UICollecti
                     self.bookModal?.chatButton.gradient.frame = (self.bookModal?.chatButton.bounds)!
                     self.bookModal?.completeButton.gradient.frame = (self.bookModal?.completeButton.bounds)!
                     break
+                case 3:
+                    self.bookModal?.buyBook.gradient.frame = (self.bookModal?.buyBook.bounds)!
+                    break
                 default:
                     break
                 }
@@ -156,6 +159,23 @@ class FullBookCollection: UIView, UICollectionViewDelegateFlowLayout, UICollecti
         }
         
         isLoading = false
+        collectionView.reloadData()
+    }
+    
+    func loadBookData(data: NSArray) {
+        for item in data  {
+            if let result = item as? [String: Any] {
+                let toAddBook = Book(json: result)
+                books.append(toAddBook)
+            }
+        }
+        
+        isLoading = false
+        collectionView.reloadData()
+    }
+    
+    func clearBooks() {
+        books = [Book]()
         collectionView.reloadData()
     }
 }

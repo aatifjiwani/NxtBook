@@ -23,6 +23,10 @@
 		39381D6F21751F740094ACB0 /* MarkAsComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39381D6E21751F740094ACB0 /* MarkAsComplete.swift */; };
 		39381D712175296C0094ACB0 /* SellABook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39381D702175296C0094ACB0 /* SellABook.swift */; };
 		394093A721EFC26200CE1F49 /* ConfirmBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394093A621EFC26200CE1F49 /* ConfirmBookController.swift */; };
+		394093AC21F3A85D00CE1F49 /* BookFilterModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394093AB21F3A85D00CE1F49 /* BookFilterModal.swift */; };
+		394093AE21F3AEFD00CE1F49 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394093AD21F3AEFD00CE1F49 /* UITextFieldExtension.swift */; };
+		394093B321F3AFF500CE1F49 /* FilterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394093B221F3AFF500CE1F49 /* FilterPickerView.swift */; };
+		394093B521F3B17100CE1F49 /* FilterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394093B421F3B17100CE1F49 /* FilterTextField.swift */; };
 		3967CE20216988FC00EA5476 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */; };
 		397B3CE62165830A003BAF0C /* AccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CE52165830A003BAF0C /* AccountButton.swift */; };
 		397B3CE8216587EB003BAF0C /* SignupModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B3CE7216587EB003BAF0C /* SignupModal.swift */; };
@@ -111,6 +115,10 @@
 		39381D6E21751F740094ACB0 /* MarkAsComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkAsComplete.swift; sourceTree = "<group>"; };
 		39381D702175296C0094ACB0 /* SellABook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellABook.swift; sourceTree = "<group>"; };
 		394093A621EFC26200CE1F49 /* ConfirmBookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmBookController.swift; sourceTree = "<group>"; };
+		394093AB21F3A85D00CE1F49 /* BookFilterModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFilterModal.swift; sourceTree = "<group>"; };
+		394093AD21F3AEFD00CE1F49 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		394093B221F3AFF500CE1F49 /* FilterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPickerView.swift; sourceTree = "<group>"; };
+		394093B421F3B17100CE1F49 /* FilterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTextField.swift; sourceTree = "<group>"; };
 		3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		397B3CE52165830A003BAF0C /* AccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountButton.swift; sourceTree = "<group>"; };
 		397B3CE7216587EB003BAF0C /* SignupModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModal.swift; sourceTree = "<group>"; };
@@ -209,6 +217,9 @@
 				392B5749219BBE5400F1325B /* CoverPhotoImage.swift */,
 				390DDCB221A775BD00FF8E0F /* FullBookCollection.swift */,
 				3989200321CDA7D60000FA37 /* DynamicBookModal.swift */,
+				394093AB21F3A85D00CE1F49 /* BookFilterModal.swift */,
+				394093B221F3AFF500CE1F49 /* FilterPickerView.swift */,
+				394093B421F3B17100CE1F49 /* FilterTextField.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -328,6 +339,7 @@
 				398A9FCD216864E7007F97B9 /* UserDefaultsExtension.swift */,
 				3967CE1F216988FC00EA5476 /* UIWindowExtension.swift */,
 				39D5A17E21881B8F0043EB67 /* UIImageViewExtension.swift */,
+				394093AD21F3AEFD00CE1F49 /* UITextFieldExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -665,6 +677,7 @@
 				39A191F42160178700D6786C /* IndexButton.swift in Sources */,
 				397B3CEC21659236003BAF0C /* LoginController.swift in Sources */,
 				39A191F02160140300D6786C /* Colors.swift in Sources */,
+				394093B521F3B17100CE1F49 /* FilterTextField.swift in Sources */,
 				39A191F621601BE500D6786C /* UIButtonExtension.swift in Sources */,
 				397B3CF121659523003BAF0C /* BackgroundView.swift in Sources */,
 				39381D712175296C0094ACB0 /* SellABook.swift in Sources */,
@@ -672,6 +685,7 @@
 				398A9FCE216864E7007F97B9 /* UserDefaultsExtension.swift in Sources */,
 				397B3CE8216587EB003BAF0C /* SignupModal.swift in Sources */,
 				390DDCAF21A7702A00FF8E0F /* ShowBookCollectionController.swift in Sources */,
+				394093AC21F3A85D00CE1F49 /* BookFilterModal.swift in Sources */,
 				39E54577216ED54F003B79C5 /* AboutBotModal.swift in Sources */,
 				39A191F82160273100D6786C /* SearchField.swift in Sources */,
 				39A191EB21600EFF00D6786C /* IndexController.swift in Sources */,
@@ -680,6 +694,7 @@
 				397B3CEA21658FD0003BAF0C /* LoginModal.swift in Sources */,
 				398A9FC821685DBF007F97B9 /* APIServices.swift in Sources */,
 				390DDCB321A775BD00FF8E0F /* FullBookCollection.swift in Sources */,
+				394093AE21F3AEFD00CE1F49 /* UITextFieldExtension.swift in Sources */,
 				398A9FD121698015007F97B9 /* SignupController.swift in Sources */,
 				39F6A550218029F400B48EE8 /* BookCollection.swift in Sources */,
 				39BF216A21619C46005C64A7 /* LoginSignupController.swift in Sources */,
@@ -700,6 +715,7 @@
 				3929BB1421704BEB00792372 /* Book.swift in Sources */,
 				3929BB182170564900792372 /* BuyBookButton.swift in Sources */,
 				3929BB162170511000792372 /* ConditionStars.swift in Sources */,
+				394093B321F3AFF500CE1F49 /* FilterPickerView.swift in Sources */,
 				398A9FCC21686456007F97B9 /* User.swift in Sources */,
 				39E5457E216EDD4F003B79C5 /* BuyAndSell.swift in Sources */,
 				390DDCB121A7755600FF8E0F /* FullBookCell.swift in Sources */,

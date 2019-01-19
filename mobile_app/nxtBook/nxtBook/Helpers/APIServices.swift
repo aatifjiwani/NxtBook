@@ -49,6 +49,41 @@ class APIServices {
         
     }
     
+    static func getBooks(query: String?, edition: String?, priceLow: Double?, priceHigh: Double?, condition: Int?, completion: @escaping ([String: Any]?, Int) -> ()) {
+        
+        var urlString = "\(baseURL)/search/?token=\(Secrets.appKey)"
+        
+        if let q = query {
+            urlString = urlString + "&query=\(q)"
+        }
+        
+        if let e = edition {
+            urlString = urlString + "&edition=\(e)"
+        }
+        
+        if let pl = priceLow {
+            urlString = urlString + "&price_low=\(pl)"
+        }
+        
+        if let ph = priceHigh {
+            urlString = urlString + "&price_high=\(ph)"
+        }
+        
+        if let c = condition {
+            urlString = urlString + "&condition=\(c)"
+        }
+        
+        urlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        print(urlString)
+        
+        let url = URL(string: urlString)!
+        
+        makeAPICallWithResponse(url: url, method: "GET", dict: nil) { (response, status) in
+            completion(response, status)
+        }
+    }
+    
     static func createSoldBook(title: String, author: String, edition: String, isbn: String, price: Double, condition: Int, coverPhoto: String, userId: Int, completion: @escaping ([String: Any]?, Int) -> ()) {
         let url = URL(string: "\(baseURL)/selling_books/?token=\(Secrets.appKey)")!
         let json: [String: Any] = [
